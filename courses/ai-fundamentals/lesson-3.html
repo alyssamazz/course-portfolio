@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesson 3: Types of AI Tools You'll Encounter | AI Fundamentals | BerwynAI Academy</title>
+  <meta name="description" content="Kirkpatrick's four levels of evaluation, why level 4 ROI is contested, and the confidence metric specific to enabling a sales force." />
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../../css/styles.css?v=202608151122" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BerwynAI Academy" />
+  <meta property="og:title" content="Lesson 3: Types of AI Tools You'll Encounter | AI Fundamentals | BerwynAI Academy" />
+  <meta property="og:description" content="Kirkpatrick's four levels of evaluation, why level 4 ROI is contested, and the confidence metric specific to enabling a sales force." />
+  <meta property="og:image" content="../../assets/images/og-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lesson 3: Types of AI Tools You'll Encounter | AI Fundamentals | BerwynAI Academy" />
+  <meta name="twitter:description" content="Kirkpatrick's four levels of evaluation, why level 4 ROI is contested, and the confidence metric specific to enabling a sales force." />
+  <meta name="twitter:image" content="../../assets/images/og-card.jpg" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../../index.html">
+        <span class="mark">B</span>
+        <span>BerwynAI <span class="sub">Academy</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="../../index.html">Courses</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container course-shell" id="main">
+
+    <aside class="sidebar">
+      <h4>Course Progress</h4>
+      <ul class="sidebar-list" id="course-sidebar">
+        <li><a href="lesson-1.html" data-lesson-id="lesson-1"><span class="step-dot"></span> 1. What Is AI?</a></li>
+        <li><a href="lesson-2.html" data-lesson-id="lesson-2"><span class="step-dot"></span> 2. How AI Models Work</a></li>
+        <li><a href="lesson-3.html" data-lesson-id="lesson-3"><span class="step-dot"></span> 3. AI Tools You'll Encounter</a></li>
+        <li><a href="lesson-4.html" data-lesson-id="lesson-4"><span class="step-dot"></span> 4. Using AI Responsibly</a></li>
+        <li><a href="lesson-5.html" data-lesson-id="lesson-5"><span class="step-dot"></span> 5. Your First AI Conversation</a></li>
+        <li><a href="exam.html"><span class="step-dot">&#9733;</span> Certification Exam</a></li>
+      </ul>
+    </aside>
+
+    <div>
+      <p class="breadcrumb"><a href="../../index.html">Courses</a> / <a href="index.html">AI Fundamentals</a> / Lesson 3</p>
+
+      <div class="lock-gate" id="lock-gate" style="display:none;">
+        <div class="lock-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h2>Finish Lesson 2 first</h2>
+        <p>Knowing how models actually work makes the differences between these tools far easier to reason about. Pass Lesson 2 and this one opens automatically.</p>
+        <a href="lesson-2.html" class="btn btn-primary">Go to Lesson 2</a>
+        <span class="lock-skip"><a href="#" id="skip-lock">Skip ahead anyway</a></span>
+      </div>
+
+      <div id="lesson-content">
+
+      <div class="lesson-header">
+        <span class="kicker">Lesson 3 of 5</span>
+        <h1>Types of AI Tools You'll Encounter</h1>
+      </div>
+
+      <figure class="media-figure media-hero">
+        <img src="../../assets/images/lesson-3-hero.png" alt="Illustration of five categories of AI tool arranged as a toolkit"
+             onerror="this.closest('.media-figure').classList.add('is-missing')" />
+        <div class="media-fallback">
+          <svg width="470" height="170" viewBox="0 0 470 170" role="img" aria-label="Five AI tool categories shown as labelled panels">
+            <g font-family="sans-serif" font-size="10" font-weight="700" text-anchor="middle">
+              <rect x="4" y="30" width="86" height="86" rx="12" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.6"/>
+              <path d="M26 60h42M26 72h30" stroke="#4f46e5" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M26 86h42v10l-10-10" stroke="#4f46e5" stroke-width="2" fill="none" stroke-linejoin="round"/>
+              <text x="47" y="132" fill="#3730a3">Chat</text>
+
+              <rect x="98" y="30" width="86" height="86" rx="12" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.6"/>
+              <rect x="118" y="54" width="46" height="36" rx="4" fill="none" stroke="#0f766e" stroke-width="2"/>
+              <circle cx="130" cy="65" r="4" fill="#0f766e"/>
+              <path d="M118 84l14-12 12 10 8-6 12 14" stroke="#0f766e" stroke-width="2" fill="none" stroke-linejoin="round"/>
+              <text x="141" y="132" fill="#0f766e">Image</text>
+
+              <rect x="192" y="30" width="86" height="86" rx="12" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.6"/>
+              <path d="M222 58l-12 14 12 14M248 58l12 14-12 14" stroke="#4f46e5" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="235" y="132" fill="#3730a3">Code</text>
+
+              <rect x="286" y="30" width="86" height="86" rx="12" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.6"/>
+              <rect x="306" y="56" width="46" height="34" rx="4" fill="none" stroke="#0f766e" stroke-width="2"/>
+              <path d="M306 60l23 16 23-16" stroke="#0f766e" stroke-width="2" fill="none"/>
+              <text x="329" y="132" fill="#0f766e">Embedded</text>
+
+              <rect x="380" y="30" width="86" height="86" rx="12" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.6"/>
+              <circle cx="423" cy="72" r="18" fill="none" stroke="#4f46e5" stroke-width="2"/>
+              <path d="M423 62v10l7 5" stroke="#4f46e5" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <text x="423" y="132" fill="#3730a3">Agents</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>Five categories cover almost everything currently marketed as an AI tool.</figcaption>
+      </figure>
+
+      <div class="audio-block" id="audio-block">
+        <span class="audio-label">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 010 7"/></svg>
+          Listen to this lesson
+        </span>
+        <audio controls preload="metadata" src="../../assets/audio/lesson-3-narration.mp3"
+               onloadedmetadata="this.closest('.audio-block').classList.add('is-ready')"></audio>
+      </div>
+
+      <div class="video-placeholder">
+        <iframe
+          src="https://www.youtube.com/embed/qYNweeDHiyU"
+          title="AI, Machine Learning, Deep Learning and Generative AI Explained by IBM Technology"
+          style="width:100%; height:100%; border:0;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <p class="video-credit">
+        "AI, Machine Learning, Deep Learning and Generative AI Explained" by
+        <a href="https://www.youtube.com/@IBMTechnology" target="_blank" rel="noopener">IBM Technology</a>
+      </p>
+
+      <div class="lesson-body">
+        <p>
+          Almost everything sold as an AI tool falls into one of five
+          categories. Learning the categories matters more than learning
+          product names, because products churn constantly while the
+          categories have stayed stable and tell you what a tool is actually
+          built to do.
+        </p>
+
+        <h2>Conversational assistants</h2>
+        <p>
+          Claude and ChatGPT are the familiar examples. You describe what you
+          need in ordinary language and get a response. These are the
+          generalists, and they handle a genuinely wide range: drafting and
+          editing, summarising, explaining unfamiliar material, brainstorming,
+          reformatting messy data, translating, and working through a problem
+          out loud with you.
+        </p>
+        <p>
+          If you only ever learn one category, learn this one. It covers the
+          largest share of everyday knowledge work, and skill here transfers
+          directly to every other category.
+        </p>
+
+        <h2>Image and video generators</h2>
+        <p>
+          Tools such as Midjourney, DALL-E and Google's image models turn a
+          text description into a picture. Video generation is newer and
+          moving quickly. These are strong for concept art, illustration,
+          mockups, storyboards and marketing visuals.
+        </p>
+        <p>
+          Two practical limits are worth knowing upfront. Text rendered
+          inside generated images is often garbled, and precise composition
+          takes considerable iteration. Treat the first output as a starting
+          point rather than a deliverable.
+        </p>
+
+        <h2>Coding assistants</h2>
+        <p>
+          Claude Code, GitHub Copilot and similar tools live inside an editor
+          or terminal and are tuned specifically for software work. They read
+          your existing code for context, which is the key difference from
+          pasting snippets into a chat window. They write new code, explain
+          unfamiliar code, find bugs, write tests and handle repetitive
+          refactoring.
+        </p>
+
+        <h2>Embedded AI features</h2>
+        <p>
+          Increasingly the AI is inside a product you already pay for.
+          Drafting a reply in your email client, summarising a recorded
+          meeting, suggesting a spreadsheet formula, cleaning up a document.
+          Same underlying technology, packaged for one job and placed exactly
+          where that job happens.
+        </p>
+        <p>
+          These are often the easiest wins in an organisation, because there
+          is no new tool to procure, no new login, and the data usually stays
+          inside a vendor relationship that has already been reviewed.
+        </p>
+
+        <h2>Agents</h2>
+        <p>
+          The newest category. An agent is given a goal rather than a single
+          instruction, and it takes multiple steps on its own: searching,
+          calling other software, checking its own work, and retrying. Booking
+          travel against a set of constraints, or working through a backlog of
+          support tickets, are typical framings.
+        </p>
+        <p>
+          Capability here is advancing fast and reliability varies a great
+          deal by task. The sensible posture is genuine interest paired with
+          close supervision, particularly anywhere an agent can take an action
+          that is hard to reverse.
+        </p>
+
+        <figure class="media-figure">
+          <img src="../../assets/images/lesson-3-decision-tree.png" alt="Decision tree matching the kind of output you need to a category of AI tool"
+               onerror="this.closest('.media-figure').classList.add('is-missing')" />
+          <div class="media-fallback">
+            <svg width="520" height="250" viewBox="0 0 520 250" role="img" aria-label="Decision tree from what output do you need to the matching tool category">
+              <rect x="176" y="4" width="168" height="34" rx="8" fill="#18181b"/>
+              <text x="260" y="26" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#ffffff">What output do you need?</text>
+
+              <path d="M260 38 V54 M70 54 H450 M70 54 V70 M165 54 V70 M260 54 V70 M355 54 V70 M450 54 V70"
+                    stroke="#d4d4d8" stroke-width="1.6" fill="none"/>
+
+              <g font-family="sans-serif" font-size="9" text-anchor="middle">
+                <rect x="12" y="70" width="116" height="30" rx="7" fill="#fafafa" stroke="#e5e7eb" stroke-width="1.3"/>
+                <text x="70" y="89" fill="#52525b">Words or analysis</text>
+                <rect x="107" y="70" width="116" height="30" rx="7" fill="#fafafa" stroke="#e5e7eb" stroke-width="1.3" transform="translate(0,38)"/>
+                <text x="165" y="127" fill="#52525b">A picture or video</text>
+                <rect x="202" y="70" width="116" height="30" rx="7" fill="#fafafa" stroke="#e5e7eb" stroke-width="1.3" transform="translate(0,76)"/>
+                <text x="260" y="165" fill="#52525b">Working code</text>
+                <rect x="297" y="70" width="116" height="30" rx="7" fill="#fafafa" stroke="#e5e7eb" stroke-width="1.3" transform="translate(0,114)"/>
+                <text x="355" y="203" fill="#52525b">A task done in an app</text>
+                <rect x="392" y="70" width="116" height="30" rx="7" fill="#fafafa" stroke="#e5e7eb" stroke-width="1.3" transform="translate(0,152)"/>
+                <text x="450" y="241" fill="#52525b">A multi step goal</text>
+              </g>
+
+              <path d="M165 70 V108 M260 70 V146 M355 70 V184 M450 70 V222" stroke="#d4d4d8" stroke-width="1.3" fill="none"/>
+
+              <g font-family="sans-serif" font-size="9" font-weight="700" text-anchor="middle">
+                <rect x="12" y="106" width="116" height="26" rx="7" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.3"/>
+                <text x="70" y="123" fill="#3730a3">Chat assistant</text>
+                <rect x="107" y="144" width="116" height="26" rx="7" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.3"/>
+                <text x="165" y="161" fill="#0f766e">Image generator</text>
+                <rect x="202" y="182" width="116" height="26" rx="7" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.3"/>
+                <text x="260" y="199" fill="#3730a3">Coding assistant</text>
+                <rect x="297" y="220" width="116" height="26" rx="7" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.3"/>
+                <text x="355" y="237" fill="#0f766e">Embedded feature</text>
+                <rect x="392" y="220" width="116" height="26" rx="7" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.3" transform="translate(0,0)"/>
+                <text x="450" y="237" fill="#3730a3">Agent</text>
+              </g>
+            </svg>
+          </div>
+          <figcaption>Start from the output you need. The category follows from that, and the product follows from the category.</figcaption>
+        </figure>
+
+        <h2>Off the shelf, configured, or custom built</h2>
+        <p>
+          Cutting across all five categories is a second question: how much
+          of the tool is yours. Most teams should start at the left of this
+          spectrum and only move right when a specific limitation forces it.
+        </p>
+
+        <div class="lesson-illustration">
+          <svg width="500" height="140" viewBox="0 0 500 140" role="img" aria-label="Spectrum from off the shelf to configured to custom built, with rising cost and control">
+            <defs>
+              <linearGradient id="l3spec" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#4f46e5"/><stop offset="100%" stop-color="#0f766e"/>
+              </linearGradient>
+            </defs>
+            <rect x="20" y="52" width="460" height="10" rx="5" fill="url(#l3spec)" opacity="0.25"/>
+            <g font-family="sans-serif" text-anchor="middle">
+              <circle cx="90" cy="57" r="8" fill="#4f46e5"/>
+              <text x="90" y="38" font-size="11" font-weight="700" fill="#3730a3">Off the shelf</text>
+              <text x="90" y="82" font-size="9" fill="#52525b">Sign up and use</text>
+              <text x="90" y="96" font-size="9" fill="#a1a1aa">Days</text>
+
+              <circle cx="250" cy="57" r="8" fill="#6366f1"/>
+              <text x="250" y="38" font-size="11" font-weight="700" fill="#3730a3">Configured</text>
+              <text x="250" y="82" font-size="9" fill="#52525b">Your docs and rules</text>
+              <text x="250" y="96" font-size="9" fill="#a1a1aa">Weeks</text>
+
+              <circle cx="410" cy="57" r="8" fill="#0f766e"/>
+              <text x="410" y="38" font-size="11" font-weight="700" fill="#0f766e">Custom built</text>
+              <text x="410" y="82" font-size="9" fill="#52525b">Built around your data</text>
+              <text x="410" y="96" font-size="9" fill="#a1a1aa">Months</text>
+            </g>
+            <text x="20" y="126" font-family="sans-serif" font-size="9" fill="#a1a1aa">Control and cost both rise to the right. Start left, move right only when something forces it.</text>
+          </svg>
+        </div>
+
+        <div class="myth-grid">
+          <div class="myth-card">
+            <h5>Common belief</h5>
+            <p>Pick the single most capable model available and use it for everything. Anything less is settling.</p>
+          </div>
+          <div class="reality-card">
+            <h5>What experienced teams do</h5>
+            <p>Match the tool to the task. A smaller, faster, cheaper model often wins on high volume routine work, and the frontier model gets reserved for jobs that genuinely need it.</p>
+          </div>
+        </div>
+
+        <div class="mistakes">
+          <h4>Mistakes worth avoiding early</h4>
+          <ul>
+            <li><strong>Choosing the product before defining the output.</strong> Name what you need to end up with, and the category is usually obvious. Skipping that step is how teams end up with three overlapping subscriptions.</li>
+            <li><strong>Jumping straight to custom built.</strong> Most requirements that feel unique are met by an off the shelf tool with a good prompt and a few uploaded documents, at a tiny fraction of the cost.</li>
+            <li><strong>Giving an agent irreversible permissions on day one.</strong> Sending email, moving money and deleting records deserve a human confirmation step until you have genuinely earned confidence in the setup.</li>
+          </ul>
+        </div>
+
+        <details class="deep-dive">
+          <summary>Deep dive: what vendors mean by fine-tuning and RAG</summary>
+          <div class="deep-dive-body">
+            <p>
+              Two terms come up constantly in sales conversations, and the
+              difference between them changes what you should expect.
+            </p>
+            <p>
+              <strong>Fine-tuning</strong> takes an existing trained model and
+              continues training it on a narrower dataset, which adjusts the
+              model's own parameters. It is well suited to teaching a
+              consistent style, format or tone. It is a poor way to teach
+              facts, because the knowledge is baked in at training time and
+              updating it means running the process again.
+            </p>
+            <p>
+              <strong>Retrieval augmented generation</strong>, usually
+              shortened to RAG, leaves the model untouched. When a question
+              arrives, the system searches your documents, pulls the relevant
+              passages, and places them into the prompt as context. The model
+              answers from material it can actually see.
+            </p>
+            <p>
+              For the very common request "make it answer questions about our
+              internal documentation", RAG is almost always the right answer.
+              It is cheaper, the source of any claim can be cited, and
+              updating the knowledge means updating a document rather than
+              retraining anything. A vendor proposing fine-tuning for a
+              factual lookup problem is worth questioning closely.
+            </p>
+          </div>
+        </details>
+
+        <div class="scenario" data-scenario data-lesson-id="lesson-3">
+          <span class="scenario-tag">Decision point</span>
+          <h3 class="scenario-title">Six thousand pieces of customer feedback</h3>
+          <p class="scenario-setup">
+            Your team has collected roughly six thousand free text survey
+            responses from the past quarter. Leadership wants the main themes
+            summarised for a board meeting in two weeks. Someone suggests
+            commissioning a custom machine learning model. What do you
+            recommend?
+          </p>
+          <div class="scenario-choices">
+            <button type="button" class="scenario-choice" data-quality="poor"
+              data-feedback="A custom model is heavy machinery for this job. Scoping, data preparation, training and evaluation will not fit two weeks, and the result would likely be worse than an off the shelf assistant on a task this well suited to general language understanding. This is the single most common and most expensive misstep organisations make with AI.">
+              Commission the custom model. Bespoke work on your own data will be most accurate.
+            </button>
+            <button type="button" class="scenario-choice" data-quality="best"
+              data-feedback="Correct, and it will likely take an afternoon rather than two weeks. Theme extraction from free text is exactly what a conversational assistant is good at. Because six thousand responses will not fit in one context window, batch them, summarise each batch, then summarise the summaries. Keep a sample for manual spot checking so you can state how reliable the themes are when the board asks.">
+              Use an off the shelf assistant, processing the responses in batches and checking a sample by hand.
+            </button>
+            <button type="button" class="scenario-choice" data-quality="ok"
+              data-feedback="Reading them all by hand gives you genuine confidence in the result, and your judgement will catch nuance a model misses. The cost is real though: six thousand responses is roughly a week of focused work, and fatigue makes later batches less reliable than earlier ones. The stronger version is a hybrid, letting the model do the first pass and spending your attention on verification and the surprising cases.">
+              Read and tag them manually. It is slow but you will trust the output.
+            </button>
+          </div>
+          <p class="scenario-hint">Open the other options to see how those would have played out.</p>
+          <div class="scenario-result"></div>
+        </div>
+
+        <div class="key-takeaways">
+          <h4>Key takeaways</h4>
+          <ul>
+            <li>Five categories cover the field: chat assistants, image and video generators, coding assistants, embedded features, and agents.</li>
+            <li>Define the output you need first. The category, then the product, follow from that.</li>
+            <li>Off the shelf beats custom built for most requirements. Move right along that spectrum only when something specific forces it.</li>
+            <li>RAG suits factual questions over your own documents. Fine-tuning suits style and format.</li>
+          </ul>
+        </div>
+
+        <div class="resource-links">
+          <h4>Go deeper</h4>
+          <ul>
+            <li><a href="https://claude.ai/" target="_blank" rel="noopener">Try Claude, Anthropic's assistant</a></li>
+            <li><a href="https://www.anthropic.com/claude" target="_blank" rel="noopener">Claude capabilities overview</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" target="_blank" rel="noopener">Wikipedia: Retrieval augmented generation</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="quiz-block">
+        <h3 class="section-heading">Check your understanding</h3>
+        <form data-quiz-form>
+          <div class="quiz-question" data-correct="1" data-explain="Naming the output you need points straight at a category. Starting from a product name is how teams end up with overlapping tools that do not fit the actual work.">
+            <p class="q-text">1. What is the best first question when choosing an AI tool?</p>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q1" value="0"> Which vendor is the largest?</label>
+              <label class="quiz-option"><input type="radio" name="q1" value="1"> What output do I actually need to produce?</label>
+              <label class="quiz-option"><input type="radio" name="q1" value="2"> Which model has the most parameters?</label>
+              <label class="quiz-option"><input type="radio" name="q1" value="3"> Which tool was released most recently?</label>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="2" data-explain="An agent is given a goal and takes multiple steps on its own, calling other software and checking its work. That autonomy is exactly why irreversible actions deserve a human confirmation step.">
+            <p class="q-text">2. What distinguishes an AI agent from a standard chat assistant?</p>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q2" value="0"> It runs entirely offline on your own machine</label>
+              <label class="quiz-option"><input type="radio" name="q2" value="1"> It generates images rather than text</label>
+              <label class="quiz-option"><input type="radio" name="q2" value="2"> It pursues a goal across multiple steps, using other software along the way</label>
+              <label class="quiz-option"><input type="radio" name="q2" value="3"> It never requires any human oversight</label>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="0" data-explain="RAG searches your documents and puts the relevant passages into the prompt, so answers come from material the model can actually see and cite. Fine-tuning changes the model's parameters and suits style rather than facts.">
+            <p class="q-text">3. To answer questions about your company's internal documents, the usual right approach is:</p>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q3" value="0"> Retrieval augmented generation, which puts relevant passages into the prompt</label>
+              <label class="quiz-option"><input type="radio" name="q3" value="1"> Fine-tuning, because facts must be baked into the model</label>
+              <label class="quiz-option"><input type="radio" name="q3" value="2"> Training a new model from scratch on your documents</label>
+              <label class="quiz-option"><input type="radio" name="q3" value="3"> An image generator configured for text</label>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Answers</button>
+        </form>
+        <div class="quiz-summary" data-quiz-summary>
+          <div class="score" data-quiz-score>0 / 3</div>
+          <p data-quiz-summary-text></p>
+          <div id="pass-actions" style="display:none;">
+            <button class="btn btn-primary" id="continue-btn">Mark Lesson Complete and Continue</button>
+          </div>
+          <div id="fail-actions" style="display:none;">
+            <button class="btn btn-secondary" id="retry-btn">Retry Quiz</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson-footer-nav">
+        <a href="lesson-2.html" class="btn btn-secondary">Back: How AI Models Work</a>
+        <a href="lesson-4.html" class="btn btn-secondary">Next: Using AI Responsibly</a>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 BerwynAI Academy</span>
+      <span>A portfolio project demonstrating course design and front end build.</span>
+    </div>
+  </footer>
+
+  <script src="../../js/progress.js?v=202608151122"></script>
+  <script src="../../js/gamification.js?v=202608151122"></script>
+  <script src="../../js/quiz.js?v=202608151122"></script>
+  <script src="../../js/scenario.js?v=202608151122"></script>
+  <script>
+    const COURSE_ID = "ai-fundamentals";
+    const LESSON_ID = "lesson-3";
+    const sidebar = document.getElementById("course-sidebar");
+
+    CourseProgress.recordVisit(COURSE_ID);
+    CourseProgress.renderSidebar(sidebar, COURSE_ID, LESSON_ID);
+    Gamification.evaluateBadges(COURSE_ID);
+
+    if (Gamification.isLessonLocked(COURSE_ID, LESSON_ID)) {
+      document.getElementById("lock-gate").style.display = "block";
+      document.getElementById("lesson-content").style.display = "none";
+    }
+    document.getElementById("skip-lock").addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("lock-gate").style.display = "none";
+      document.getElementById("lesson-content").style.display = "";
+    });
+
+    initScenario({ courseId: COURSE_ID, lessonId: LESSON_ID });
+
+    initQuiz({
+      formSelector: "[data-quiz-form]",
+      summarySelector: "[data-quiz-summary]",
+      passRatio: 0.67,
+      passMessage: "Nice work. Next comes the part that keeps you out of trouble.",
+      failMessage: "You need at least 2 of 3 to continue. Review the material above and try again.",
+      onComplete: function (result) {
+        CourseProgress.setQuizScore(COURSE_ID, LESSON_ID, result.correctCount, result.total);
+        document.getElementById(result.passed ? "pass-actions" : "fail-actions").style.display = "block";
+
+        if (result.passed) {
+          CourseProgress.markLessonComplete(COURSE_ID, LESSON_ID);
+          const xpGains = Gamification.awardLessonXp(COURSE_ID, LESSON_ID, result.correctCount, result.total);
+          const newBadges = Gamification.evaluateBadges(COURSE_ID);
+          Gamification.showRewards(xpGains, newBadges);
+          CourseProgress.renderSidebar(sidebar, COURSE_ID, LESSON_ID);
+        }
+      },
+    });
+
+    document.getElementById("continue-btn").addEventListener("click", function () {
+      window.location.href = "lesson-4.html";
+    });
+    document.getElementById("retry-btn").addEventListener("click", function () {
+      window.location.reload();
+    });
+  </script>
+
+  <script src="../../js/reveal.js?v=202608151122"></script>
+
+</body>
+</html>

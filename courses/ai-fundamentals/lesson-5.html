@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesson 5: Your First AI Conversation | AI Fundamentals | BerwynAI Academy</title>
+  <meta name="description" content="Release stages, why cadence differs between companies, and deciding when a feature is mature enough to build enablement for." />
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../../css/styles.css?v=202608151122" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BerwynAI Academy" />
+  <meta property="og:title" content="Lesson 5: Your First AI Conversation | AI Fundamentals | BerwynAI Academy" />
+  <meta property="og:description" content="Release stages, why cadence differs between companies, and deciding when a feature is mature enough to build enablement for." />
+  <meta property="og:image" content="../../assets/images/og-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lesson 5: Your First AI Conversation | AI Fundamentals | BerwynAI Academy" />
+  <meta name="twitter:description" content="Release stages, why cadence differs between companies, and deciding when a feature is mature enough to build enablement for." />
+  <meta name="twitter:image" content="../../assets/images/og-card.jpg" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../../index.html">
+        <span class="mark">B</span>
+        <span>BerwynAI <span class="sub">Academy</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="../../index.html">Courses</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container course-shell" id="main">
+
+    <aside class="sidebar">
+      <h4>Course Progress</h4>
+      <ul class="sidebar-list" id="course-sidebar">
+        <li><a href="lesson-1.html" data-lesson-id="lesson-1"><span class="step-dot"></span> 1. What Is AI?</a></li>
+        <li><a href="lesson-2.html" data-lesson-id="lesson-2"><span class="step-dot"></span> 2. How AI Models Work</a></li>
+        <li><a href="lesson-3.html" data-lesson-id="lesson-3"><span class="step-dot"></span> 3. AI Tools You'll Encounter</a></li>
+        <li><a href="lesson-4.html" data-lesson-id="lesson-4"><span class="step-dot"></span> 4. Using AI Responsibly</a></li>
+        <li><a href="lesson-5.html" data-lesson-id="lesson-5"><span class="step-dot"></span> 5. Your First AI Conversation</a></li>
+        <li><a href="exam.html"><span class="step-dot">&#9733;</span> Certification Exam</a></li>
+      </ul>
+    </aside>
+
+    <div>
+      <p class="breadcrumb"><a href="../../index.html">Courses</a> / <a href="index.html">AI Fundamentals</a> / Lesson 5</p>
+
+      <div class="lock-gate" id="lock-gate" style="display:none;">
+        <div class="lock-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h2>Finish Lesson 4 first</h2>
+        <p>Practise sits on top of the responsible use habits from the previous lesson. Pass Lesson 4 and this one opens automatically.</p>
+        <a href="lesson-4.html" class="btn btn-primary">Go to Lesson 4</a>
+        <span class="lock-skip"><a href="#" id="skip-lock">Skip ahead anyway</a></span>
+      </div>
+
+      <div id="lesson-content">
+
+      <div class="lesson-header">
+        <span class="kicker">Lesson 5 of 5</span>
+        <h1>Your First AI Conversation</h1>
+      </div>
+
+      <figure class="media-figure media-hero">
+        <img src="../../assets/images/lesson-5-hero.png" alt="Illustration of a prompt being refined across several turns of conversation"
+             onerror="this.closest('.media-figure').classList.add('is-missing')" />
+        <div class="media-fallback">
+          <svg width="450" height="180" viewBox="0 0 450 180" role="img" aria-label="A weak prompt refined into a strong one across three turns">
+            <g font-family="sans-serif" font-size="10">
+              <rect x="10" y="14" width="150" height="40" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+              <text x="85" y="32" text-anchor="middle" font-weight="700" fill="#991b1b">"Help with email"</text>
+              <text x="85" y="46" text-anchor="middle" font-size="9" fill="#991b1b">vague</text>
+
+              <path d="M170 34 H206" stroke="#a1a1aa" stroke-width="2" marker-end="url(#l5a)"/>
+
+              <rect x="212" y="8" width="228" height="52" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+              <text x="326" y="28" text-anchor="middle" font-weight="700" fill="#92400e">"Write a short email declining"</text>
+              <text x="326" y="42" text-anchor="middle" font-size="9" fill="#92400e">better, still missing tone and format</text>
+
+              <path d="M326 66 V90" stroke="#a1a1aa" stroke-width="2" marker-end="url(#l5a)"/>
+
+              <rect x="60" y="96" width="380" height="70" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+              <text x="250" y="118" text-anchor="middle" font-weight="700" fill="#166534">"Write a 3 sentence friendly email declining</text>
+              <text x="250" y="134" text-anchor="middle" font-weight="700" fill="#166534">Thursday's review, offering two alternative times"</text>
+              <text x="250" y="152" text-anchor="middle" font-size="9" fill="#166534">task, context, format and constraints all present</text>
+            </g>
+            <defs><marker id="l5a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a1a1aa"/></marker></defs>
+          </svg>
+        </div>
+        <figcaption>Most of the skill is in adding the detail the model cannot guess.</figcaption>
+      </figure>
+
+      <div class="audio-block" id="audio-block">
+        <span class="audio-label">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 010 7"/></svg>
+          Listen to this lesson
+        </span>
+        <audio controls preload="metadata" src="../../assets/audio/lesson-5-narration.mp3"
+               onloadedmetadata="this.closest('.audio-block').classList.add('is-ready')"></audio>
+      </div>
+
+      <div class="video-placeholder">
+        <iframe
+          src="https://www.youtube.com/embed/ysPbXH0LpIE"
+          title="Prompting 101 by Anthropic"
+          style="width:100%; height:100%; border:0;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <p class="video-credit">
+        "Prompting 101" by
+        <a href="https://www.youtube.com/@anthropic-ai" target="_blank" rel="noopener">Anthropic</a>.
+        This one goes deeper than the lesson, so skip ahead if it gets technical.
+      </p>
+
+      <div class="lesson-body">
+        <p>
+          You know what AI is, roughly how it works, which tools exist and how
+          to use them without causing problems. What remains is the part that
+          only comes from doing it.
+        </p>
+        <p>
+          A prompt is just the instruction you give. The useful frame is
+          delegation. You are handing a task to a capable new colleague who
+          is quick and widely read, but who has never met you, does not know
+          your company, cannot see your screen and will not ask a follow up
+          question unless you invite one. Everything they need has to be in
+          the message.
+        </p>
+
+        <h2>Four ingredients</h2>
+        <p>
+          Nearly every weak prompt is missing one of these, and nearly every
+          strong one has all four.
+        </p>
+        <ul>
+          <li><strong>Task.</strong> The specific thing to produce. "Write", "summarise", "compare", "rewrite", "find the problems in".</li>
+          <li><strong>Context.</strong> Who it is for, what it is part of, what has already happened, what matters here.</li>
+          <li><strong>Format.</strong> Length, structure, tone. A table, five bullets, three sentences, plain language for a non specialist.</li>
+          <li><strong>Constraints.</strong> The boundaries. No jargon, do not invent statistics, stay under 200 words, avoid mentioning pricing.</li>
+        </ul>
+
+        <figure class="media-figure">
+          <img src="../../assets/images/lesson-5-prompt-anatomy.png" alt="A strong prompt annotated to show task, context, format and constraints"
+               onerror="this.closest('.media-figure').classList.add('is-missing')" />
+          <div class="media-fallback">
+            <svg width="520" height="215" viewBox="0 0 520 215" role="img" aria-label="A prompt broken into task, context, format and constraint segments">
+              <rect x="10" y="10" width="500" height="94" rx="10" fill="#fafafa" stroke="#e5e7eb" stroke-width="1.4"/>
+              <g font-family="sans-serif" font-size="11">
+                <text x="26" y="34" fill="#3730a3" font-weight="700">Write a follow up email</text>
+                <text x="188" y="34" fill="#0f766e" font-weight="700">to a client who missed our demo call,</text>
+                <text x="26" y="56" fill="#0f766e" font-weight="700">they are evaluating us against two competitors.</text>
+                <text x="26" y="78" fill="#92400e" font-weight="700">Three short paragraphs, warm but professional.</text>
+                <text x="300" y="78" fill="#991b1b" font-weight="700">No pricing, no pressure.</text>
+              </g>
+
+              <g font-family="sans-serif" font-size="9" font-weight="700">
+                <rect x="10" y="122" width="112" height="24" rx="6" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.2"/>
+                <text x="66" y="138" text-anchor="middle" fill="#3730a3">TASK</text>
+                <text x="66" y="162" text-anchor="middle" font-weight="400" font-size="8.5" fill="#52525b">what to produce</text>
+
+                <rect x="132" y="122" width="112" height="24" rx="6" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.2"/>
+                <text x="188" y="138" text-anchor="middle" fill="#0f766e">CONTEXT</text>
+                <text x="188" y="162" text-anchor="middle" font-weight="400" font-size="8.5" fill="#52525b">the situation</text>
+
+                <rect x="254" y="122" width="112" height="24" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1.2"/>
+                <text x="310" y="138" text-anchor="middle" fill="#92400e">FORMAT</text>
+                <text x="310" y="162" text-anchor="middle" font-weight="400" font-size="8.5" fill="#52525b">shape and tone</text>
+
+                <rect x="376" y="122" width="112" height="24" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="1.2"/>
+                <text x="432" y="138" text-anchor="middle" fill="#991b1b">CONSTRAINTS</text>
+                <text x="432" y="162" text-anchor="middle" font-weight="400" font-size="8.5" fill="#52525b">the boundaries</text>
+              </g>
+              <text x="10" y="196" font-family="sans-serif" font-size="9" fill="#a1a1aa">Missing any one of the four is where most disappointing output comes from.</text>
+            </svg>
+          </div>
+          <figcaption>The same prompt, colour coded by what each part is doing.</figcaption>
+        </figure>
+
+        <h2>Steer with the second message</h2>
+        <p>
+          Treat the first response as a draft. Experienced users rarely get
+          what they want on the first attempt, and they do not start over.
+          They correct.
+        </p>
+        <p>
+          Specific corrections work far better than general dissatisfaction.
+          "Make it better" gives the model nothing to act on. "Cut it to half
+          the length, drop the opening pleasantry, and make the second
+          paragraph concrete with an example" gives it four clear
+          instructions. If something in the draft was good, say so, because
+          otherwise a rewrite may quietly discard it.
+        </p>
+
+        <h2>Show an example when style matters</h2>
+        <p>
+          If you need output in a particular voice or structure, paste an
+          example of what good looks like and ask for the same treatment
+          applied to new material. One good example usually outperforms three
+          paragraphs describing the style you want. This works because the
+          model is pattern matching, and a concrete pattern is far less
+          ambiguous than an abstract description of one.
+        </p>
+
+        <h2>Ask for the reasoning on harder problems</h2>
+        <p>
+          For anything involving multiple steps, comparison or analysis,
+          asking the model to work through its reasoning before giving an
+          answer measurably improves quality. It also gives you something to
+          audit. If the conclusion looks wrong you can see which step went
+          astray rather than guessing.
+        </p>
+
+        <h2>Know when to start fresh</h2>
+        <p>
+          Long conversations accumulate context, and not all of it helps. If
+          a thread has wandered, or the model keeps returning to an early
+          misunderstanding, a new conversation with a clean, well constructed
+          prompt is usually faster than trying to correct course. Remember
+          from Lesson 2 that everything in the thread competes for the same
+          context window.
+        </p>
+
+        <div class="myth-grid">
+          <div class="myth-card">
+            <h5>Common belief</h5>
+            <p>Good prompting means memorising magic phrases and role incantations that unlock hidden capability.</p>
+          </div>
+          <div class="reality-card">
+            <h5>What actually works</h5>
+            <p>Clear task, real context, explicit format, honest constraints, then correcting the draft. Plain specificity beats clever phrasing almost every time.</p>
+          </div>
+        </div>
+
+        <div class="mistakes">
+          <h4>Mistakes worth avoiding early</h4>
+          <ul>
+            <li><strong>Asking for something enormous in one shot.</strong> Break a large task into stages and review each one. Quality falls off sharply when a single request tries to do too much.</li>
+            <li><strong>Saying "make it better".</strong> Name the specific change. Shorter, warmer, more concrete, fewer adjectives, different opening.</li>
+            <li><strong>Describing a style instead of showing one.</strong> Paste an example. It is faster to write and far more precise.</li>
+            <li><strong>Accepting the first draft because it sounds polished.</strong> Fluency is the one thing these models always deliver. It says nothing about whether the content is right for your purpose.</li>
+          </ul>
+        </div>
+
+        <details class="deep-dive">
+          <summary>Deep dive: does "you are an expert" actually help?</summary>
+          <div class="deep-dive-body">
+            <p>
+              Opening with a role, such as "you are an experienced financial
+              analyst", is widely repeated advice. It does something, and it
+              is commonly oversold.
+            </p>
+            <p>
+              What it genuinely does is shift vocabulary, framing and default
+              assumptions. Ask for an explanation of inflation as an
+              economist and you get different terminology than asking as a
+              primary school teacher. That is a real and useful effect on
+              register and depth.
+            </p>
+            <p>
+              What it does not do is add knowledge or capability. The model
+              does not know more about finance because you called it an
+              analyst. Everything it can do was fixed during training.
+            </p>
+            <p>
+              The practical consequence: a role is a reasonable shortcut for
+              setting tone and audience, and it is a poor substitute for the
+              four ingredients. If you find yourself stacking increasingly
+              elaborate personas to fix a disappointing answer, the missing
+              piece is almost always context or constraints, not a better
+              job title.
+            </p>
+          </div>
+        </details>
+
+        <div class="scenario" data-scenario data-lesson-id="lesson-5">
+          <span class="scenario-tag">Decision point</span>
+          <h3 class="scenario-title">The draft that is nearly right</h3>
+          <p class="scenario-setup">
+            You asked an assistant for a project update for your leadership
+            team. The draft has a strong opening paragraph, but the middle is
+            vague and it is roughly twice as long as you wanted. What is your
+            next message?
+          </p>
+          <div class="scenario-choices">
+            <button type="button" class="scenario-choice" data-quality="ok"
+              data-feedback="Starting over does work, and your rewritten prompt will probably be better than the first. The cost is that you throw away the strong opening and the model has no idea it was strong, so there is a fair chance the next version loses it. Reserve the fresh start for threads that have genuinely gone off the rails rather than drafts that are most of the way there.">
+              Start a new conversation with a much more detailed prompt.
+            </button>
+            <button type="button" class="scenario-choice" data-quality="poor"
+              data-feedback="This is the single most common wasted turn. 'Better' carries no information, so the model guesses at what you disliked and often changes the parts you were happy with while leaving the actual problem untouched. You will usually burn two or three more turns getting back to where you already were.">
+              Reply "make it better and shorter" and see what comes back.
+            </button>
+            <button type="button" class="scenario-choice" data-quality="best"
+              data-feedback="Exactly right, and it is one turn. Keeping the opening explicitly protects the part that worked, naming the length gives a measurable target, and asking for a specific metric or milestone in the middle replaces vagueness with something concrete. Precise, itemised corrections are the core skill of working with these tools, and they are what separates a two minute task from a twenty minute one.">
+              Say the opening works and should stay, cut the total to half, and make the middle concrete with a specific milestone.
+            </button>
+          </div>
+          <p class="scenario-hint">Open the other options to see how those would have played out.</p>
+          <div class="scenario-result"></div>
+        </div>
+
+        <div class="key-takeaways">
+          <h4>Key takeaways</h4>
+          <ul>
+            <li>Delegate as if to a capable colleague with no context. Task, context, format and constraints all have to be stated.</li>
+            <li>Correct the draft with specific instructions rather than general dissatisfaction.</li>
+            <li>Show an example when style matters. It beats describing the style you want.</li>
+            <li>Start a fresh conversation when a thread has wandered rather than fighting it.</li>
+          </ul>
+        </div>
+
+        <div class="resource-links">
+          <h4>Practise now</h4>
+          <ul>
+            <li><a href="https://claude.ai/" target="_blank" rel="noopener">Open Claude and try a real prompt</a></li>
+            <li><a href="https://docs.anthropic.com/" target="_blank" rel="noopener">Anthropic documentation and prompting guides</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="quiz-block">
+        <h3 class="section-heading">Check your understanding</h3>
+        <form data-quiz-form>
+          <div class="quiz-question" data-correct="3" data-explain="Task, context, format and constraints. A prompt missing any one of them leaves the model guessing, and guessing is where disappointing output comes from.">
+            <p class="q-text">1. Which set describes the four ingredients of a strong prompt?</p>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q1" value="0"> Role, politeness, urgency, length</label>
+              <label class="quiz-option"><input type="radio" name="q1" value="1"> Temperature, tokens, context window, sampling</label>
+              <label class="quiz-option"><input type="radio" name="q1" value="2"> Question, answer, review, approval</label>
+              <label class="quiz-option"><input type="radio" name="q1" value="3"> Task, context, format, constraints</label>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="2" data-explain="Specific, itemised corrections tell the model exactly what to change and what to protect. 'Make it better' gives it nothing to act on, so it often alters the parts you liked.">
+            <p class="q-text">2. A draft is nearly right but too long and vague in the middle. The best reply is:</p>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q2" value="0"> "Make it better"</label>
+              <label class="quiz-option"><input type="radio" name="q2" value="1"> Start over with a new conversation every time</label>
+              <label class="quiz-option"><input type="radio" name="q2" value="2"> Name what to keep, the target length, and the specific detail to add</label>
+              <label class="quiz-option"><input type="radio" name="q2" value="3"> Accept it, since the writing is already polished</label>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="1" data-explain="A role shifts vocabulary, framing and default assumptions, which is genuinely useful for tone and audience. It does not add knowledge, because capability was fixed during training.">
+            <p class="q-text">3. Telling a model "you are an expert analyst" mainly:</p>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q3" value="0"> Gives it access to additional training data</label>
+              <label class="quiz-option"><input type="radio" name="q3" value="1"> Shifts vocabulary and framing without adding capability</label>
+              <label class="quiz-option"><input type="radio" name="q3" value="2"> Guarantees the output will be factually correct</label>
+              <label class="quiz-option"><input type="radio" name="q3" value="3"> Expands the size of the context window</label>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Answers</button>
+        </form>
+        <div class="quiz-summary" data-quiz-summary>
+          <div class="score" data-quiz-score>0 / 3</div>
+          <p data-quiz-summary-text></p>
+          <div id="pass-actions" style="display:none;">
+            <button class="btn btn-primary" id="continue-btn">Mark Lesson Complete and Take the Exam</button>
+          </div>
+          <div id="fail-actions" style="display:none;">
+            <button class="btn btn-secondary" id="retry-btn">Retry Quiz</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson-footer-nav">
+        <a href="lesson-4.html" class="btn btn-secondary">Back: Using AI Responsibly</a>
+        <a href="exam.html" class="btn btn-primary">Certification Exam</a>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 BerwynAI Academy</span>
+      <span>A portfolio project demonstrating course design and front end build.</span>
+    </div>
+  </footer>
+
+  <script src="../../js/progress.js?v=202608151122"></script>
+  <script src="../../js/gamification.js?v=202608151122"></script>
+  <script src="../../js/quiz.js?v=202608151122"></script>
+  <script src="../../js/scenario.js?v=202608151122"></script>
+  <script>
+    const COURSE_ID = "ai-fundamentals";
+    const LESSON_ID = "lesson-5";
+    const sidebar = document.getElementById("course-sidebar");
+
+    CourseProgress.recordVisit(COURSE_ID);
+    CourseProgress.renderSidebar(sidebar, COURSE_ID, LESSON_ID);
+    Gamification.evaluateBadges(COURSE_ID);
+
+    if (Gamification.isLessonLocked(COURSE_ID, LESSON_ID)) {
+      document.getElementById("lock-gate").style.display = "block";
+      document.getElementById("lesson-content").style.display = "none";
+    }
+    document.getElementById("skip-lock").addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("lock-gate").style.display = "none";
+      document.getElementById("lesson-content").style.display = "";
+    });
+
+    initScenario({ courseId: COURSE_ID, lessonId: LESSON_ID });
+
+    initQuiz({
+      formSelector: "[data-quiz-form]",
+      summarySelector: "[data-quiz-summary]",
+      passRatio: 0.67,
+      passMessage: "All five lessons done. The certification exam is ready when you are.",
+      failMessage: "You need at least 2 of 3 to continue. Review the material above and try again.",
+      onComplete: function (result) {
+        CourseProgress.setQuizScore(COURSE_ID, LESSON_ID, result.correctCount, result.total);
+        document.getElementById(result.passed ? "pass-actions" : "fail-actions").style.display = "block";
+
+        if (result.passed) {
+          CourseProgress.markLessonComplete(COURSE_ID, LESSON_ID);
+          const xpGains = Gamification.awardLessonXp(COURSE_ID, LESSON_ID, result.correctCount, result.total);
+          const newBadges = Gamification.evaluateBadges(COURSE_ID);
+          Gamification.showRewards(xpGains, newBadges);
+          CourseProgress.renderSidebar(sidebar, COURSE_ID, LESSON_ID);
+        }
+      },
+    });
+
+    document.getElementById("continue-btn").addEventListener("click", function () {
+      window.location.href = "exam.html";
+    });
+    document.getElementById("retry-btn").addEventListener("click", function () {
+      window.location.reload();
+    });
+  </script>
+
+  <script src="../../js/reveal.js?v=202608151122"></script>
+
+</body>
+</html>

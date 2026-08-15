@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Certificate | AI Fundamentals | BerwynAI Academy</title>
+  <meta name="description" content="Your printable certificate of completion, showing level, exam score and earned badges." />
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../../css/styles.css?v=202608151122" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BerwynAI Academy" />
+  <meta property="og:title" content="Your Certificate | AI Fundamentals | BerwynAI Academy" />
+  <meta property="og:description" content="Your printable certificate of completion, showing level, exam score and earned badges." />
+  <meta property="og:image" content="../../assets/images/og-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Your Certificate | AI Fundamentals | BerwynAI Academy" />
+  <meta name="twitter:description" content="Your printable certificate of completion, showing level, exam score and earned badges." />
+  <meta name="twitter:image" content="../../assets/images/og-card.jpg" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header no-print">
+    <div class="container">
+      <a class="brand" href="../../index.html">
+        <span class="mark">B</span>
+        <span>BerwynAI <span class="sub">Academy</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="../../index.html">Courses</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="certificate-wrap" id="main">
+
+    <div id="locked-section" style="display:none; text-align:center;">
+      <div class="callout callout-warning">
+        You need to pass the <a href="exam.html">certification exam</a> before claiming your certificate.
+      </div>
+    </div>
+
+    <div id="name-form-section" style="display:none; text-align:center;">
+      <h1>Claim Your Certificate</h1>
+      <p class="lead">Congratulations on passing. Enter the name you would like printed on your certificate.</p>
+      <div style="max-width:360px; margin: 24px auto; display:flex; flex-direction:column; gap:12px;">
+        <input type="text" id="cert-name-input" placeholder="Your full name"
+          style="padding:12px 14px; border:1px solid var(--color-border); border-radius:8px; font-size:1rem; font-family:var(--font-sans);" />
+        <button id="generate-btn" class="btn btn-primary">Generate Certificate</button>
+      </div>
+    </div>
+
+    <div class="certificate" id="certificate" style="display:none;">
+      <p class="cert-eyebrow">BerwynAI Academy</p>
+      <h1>Certificate of Completion</h1>
+      <p>This certifies that</p>
+      <p class="cert-name" id="cert-name-display">&nbsp;</p>
+      <p>has successfully completed the course</p>
+      <h2>AI Fundamentals: Basic Understanding</h2>
+      <p class="cert-meta" id="cert-date"></p>
+      <p class="cert-meta" id="cert-score"></p>
+      <p class="cert-meta" id="cert-level"></p>
+      <div id="cert-badges" style="margin-top:22px;"></div>
+    </div>
+
+    <div class="no-print" id="post-cert-actions" style="display:none; text-align:center; margin-top:28px; gap:12px; justify-content:center;">
+      <button id="print-btn" class="btn btn-secondary">Print or save as PDF</button>
+      <a href="../../index.html" class="btn btn-secondary">Back to courses</a>
+    </div>
+
+  </div>
+
+  <footer class="site-footer no-print">
+    <div class="container">
+      <span>&copy; 2026 BerwynAI Academy</span>
+      <span>A portfolio project demonstrating course design and front end build.</span>
+    </div>
+  </footer>
+
+  <script src="../../js/progress.js?v=202608151122"></script>
+  <script src="../../js/gamification.js?v=202608151122"></script>
+  <script>
+    const COURSE_ID = "ai-fundamentals";
+    const examResult = CourseProgress.getExamResult(COURSE_ID);
+    const existingName = CourseProgress.getCertName(COURSE_ID);
+
+    function renderEarnedBadges() {
+      const earned = Gamification.BADGES.filter(function (b) {
+        return CourseProgress.hasBadge(COURSE_ID, b.id);
+      });
+      if (!earned.length) return;
+
+      document.getElementById("cert-badges").innerHTML =
+        '<p class="cert-meta" style="margin-bottom:10px;">Badges earned</p>' +
+        '<div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">' +
+        earned.map(function (b) {
+          return '<span style="display:inline-flex; align-items:center; gap:6px; padding:6px 12px; ' +
+            'border-radius:999px; background:var(--color-primary-light); color:var(--color-primary-dark); ' +
+            'font-size:0.76rem; font-weight:700;">' +
+            '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" ' +
+            'stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="' + b.icon + '"/></svg>' +
+            b.name + '</span>';
+        }).join("") +
+        '</div>';
+    }
+
+    function showCertificate(name) {
+      document.getElementById("name-form-section").style.display = "none";
+      document.getElementById("cert-name-display").textContent = name;
+      document.getElementById("cert-date").textContent =
+        "Awarded " + new Date().toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+
+      if (examResult) {
+        document.getElementById("cert-score").textContent =
+          "Exam score: " + examResult.score + " of " + examResult.total;
+      }
+
+      const info = Gamification.levelInfo(CourseProgress.totalXp(COURSE_ID));
+      document.getElementById("cert-level").textContent =
+        "Level " + info.level + ": " + info.name + " (" + info.xp + " XP)";
+
+      renderEarnedBadges();
+
+      document.getElementById("certificate").style.display = "block";
+      document.getElementById("post-cert-actions").style.display = "flex";
+    }
+
+    if (!examResult || !examResult.passed) {
+      document.getElementById("locked-section").style.display = "block";
+    } else if (existingName) {
+      showCertificate(existingName);
+    } else {
+      document.getElementById("name-form-section").style.display = "block";
+    }
+
+    document.getElementById("generate-btn").addEventListener("click", function () {
+      const input = document.getElementById("cert-name-input");
+      const name = input.value.trim();
+      if (!name) {
+        input.focus();
+        return;
+      }
+      CourseProgress.setCertName(COURSE_ID, name);
+      showCertificate(name);
+    });
+
+    document.getElementById("print-btn").addEventListener("click", function () {
+      window.print();
+    });
+  </script>
+
+  <script src="../../js/reveal.js?v=202608151122"></script>
+
+</body>
+</html>

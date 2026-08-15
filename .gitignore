@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Source video masters.
+# These are roughly 1GB and individual files exceed GitHub's hard 100MB
+# per-file limit, so committing them would break the push. Video is delivered
+# through YouTube embeds instead. Keep the masters locally or in cloud storage.
+courses/*/videos/
+
+# Whisper intermediates. The extracted audio is regenerable from the video,
+# so only the finished transcripts are worth keeping in version control.
+courses/*/transcripts/*.wav
+courses/*/transcripts/*.json
+
+# Whisper model, downloaded on demand by scripts/transcribe.sh. At 466MB it
+# exceeds GitHub's 100MB per-file limit, and it is re-fetchable at any time.
+.models/

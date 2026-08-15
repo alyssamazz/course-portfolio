@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lesson 2: How AI Models Work | AI Fundamentals | BerwynAI Academy</title>
+  <meta name="description" content="What a sales enablement charter must contain, what an executive sponsor provides, and how to recognise scope drift early." />
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../../css/styles.css?v=202608151122" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BerwynAI Academy" />
+  <meta property="og:title" content="Lesson 2: How AI Models Work | AI Fundamentals | BerwynAI Academy" />
+  <meta property="og:description" content="What a sales enablement charter must contain, what an executive sponsor provides, and how to recognise scope drift early." />
+  <meta property="og:image" content="../../assets/images/og-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lesson 2: How AI Models Work | AI Fundamentals | BerwynAI Academy" />
+  <meta name="twitter:description" content="What a sales enablement charter must contain, what an executive sponsor provides, and how to recognise scope drift early." />
+  <meta name="twitter:image" content="../../assets/images/og-card.jpg" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../../index.html">
+        <span class="mark">B</span>
+        <span>BerwynAI <span class="sub">Academy</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="../../index.html">Courses</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container course-shell" id="main">
+
+    <aside class="sidebar">
+      <h4>Course Progress</h4>
+      <ul class="sidebar-list" id="course-sidebar">
+        <li><a href="lesson-1.html" data-lesson-id="lesson-1"><span class="step-dot"></span> 1. What Is AI?</a></li>
+        <li><a href="lesson-2.html" data-lesson-id="lesson-2"><span class="step-dot"></span> 2. How AI Models Work</a></li>
+        <li><a href="lesson-3.html" data-lesson-id="lesson-3"><span class="step-dot"></span> 3. AI Tools You'll Encounter</a></li>
+        <li><a href="lesson-4.html" data-lesson-id="lesson-4"><span class="step-dot"></span> 4. Using AI Responsibly</a></li>
+        <li><a href="lesson-5.html" data-lesson-id="lesson-5"><span class="step-dot"></span> 5. Your First AI Conversation</a></li>
+        <li><a href="exam.html"><span class="step-dot">&#9733;</span> Certification Exam</a></li>
+      </ul>
+    </aside>
+
+    <div>
+      <p class="breadcrumb"><a href="../../index.html">Courses</a> / <a href="index.html">AI Fundamentals</a> / Lesson 2</p>
+
+      <div class="lock-gate" id="lock-gate" style="display:none;">
+        <div class="lock-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h2>Finish Lesson 1 first</h2>
+        <p>This lesson builds directly on the vocabulary from What Is AI. Pass that quiz and this one opens automatically.</p>
+        <a href="lesson-1.html" class="btn btn-primary">Go to Lesson 1</a>
+        <span class="lock-skip"><a href="#" id="skip-lock">Skip ahead anyway</a></span>
+      </div>
+
+      <div id="lesson-content">
+
+      <div class="lesson-header">
+        <span class="kicker">Lesson 2 of 5</span>
+        <h1>How AI Models Work</h1>
+      </div>
+
+      <figure class="media-figure media-hero">
+        <img src="../../assets/images/lesson-2-hero.png" alt="Illustration of a training loop repeatedly adjusting a model"
+             onerror="this.closest('.media-figure').classList.add('is-missing')" />
+        <div class="media-fallback">
+          <svg width="440" height="180" viewBox="0 0 440 180" role="img" aria-label="A loop of predict, compare, adjust, repeat">
+            <defs>
+              <linearGradient id="l2heroGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#4f46e5"/><stop offset="100%" stop-color="#14b8a6"/>
+              </linearGradient>
+              <marker id="l2h" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="url(#l2heroGrad)"/></marker>
+            </defs>
+            <circle cx="220" cy="90" r="62" fill="none" stroke="url(#l2heroGrad)" stroke-width="2" stroke-dasharray="5 6" marker-end="url(#l2h)"/>
+            <rect x="150" y="6" width="140" height="30" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.4"/>
+            <text x="220" y="26" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#3730a3">1. Predict</text>
+            <rect x="300" y="74" width="130" height="30" rx="8" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.4"/>
+            <text x="365" y="94" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f766e">2. Compare</text>
+            <rect x="150" y="144" width="140" height="30" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.4"/>
+            <text x="220" y="164" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#3730a3">3. Adjust</text>
+            <rect x="10" y="74" width="130" height="30" rx="8" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.4"/>
+            <text x="75" y="94" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#0f766e">4. Repeat</text>
+            <text x="220" y="94" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#71717a">billions of times</text>
+          </svg>
+        </div>
+        <figcaption>Training is one small correction repeated at enormous scale.</figcaption>
+      </figure>
+
+      <div class="audio-block" id="audio-block">
+        <span class="audio-label">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 010 7"/></svg>
+          Listen to this lesson
+        </span>
+        <audio controls preload="metadata" src="../../assets/audio/lesson-2-narration.mp3"
+               onloadedmetadata="this.closest('.audio-block').classList.add('is-ready')"></audio>
+      </div>
+
+      <div class="video-placeholder">
+        <iframe
+          src="https://www.youtube.com/embed/5sLYAQS9sWQ"
+          title="How Large Language Models Work by IBM Technology"
+          style="width:100%; height:100%; border:0;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <p class="video-credit">
+        "How Large Language Models Work" by
+        <a href="https://www.youtube.com/@IBMTechnology" target="_blank" rel="noopener">IBM Technology</a>
+      </p>
+
+      <div class="lesson-body">
+        <p>
+          You do not need the maths to use AI well. You do need a rough
+          mental model, because it tells you what these systems are good at,
+          where they fail, and why they fail in the particular ways they do.
+        </p>
+        <p>
+          This lesson covers four ideas: how training works, how text becomes
+          something a computer can process, how output gets generated one
+          piece at a time, and why the same question can produce different
+          answers.
+        </p>
+
+        <h2>Training is one small correction, repeated</h2>
+        <p>
+          A model starts out useless. Its internal settings, called
+          parameters, are effectively random, and its first predictions are
+          nonsense. Training fixes this through a loop that is conceptually
+          simple.
+        </p>
+        <p>
+          Show the model an example. Let it predict. Measure how wrong the
+          prediction was. Nudge every parameter slightly in the direction
+          that would have made it less wrong. Repeat.
+        </p>
+        <p>
+          One pass changes almost nothing. The scale is what does the work.
+          A frontier language model has hundreds of billions of parameters
+          and runs that loop across trillions of words of text. The result is
+          a system that has absorbed grammar, factual associations, reasoning
+          patterns, writing styles and a great deal of the structure of human
+          knowledge, without anyone having written a single rule about any of it.
+        </p>
+
+        <h2>Text has to become numbers first</h2>
+        <p>
+          Models do arithmetic, so language has to be converted into numbers.
+          Text is chopped into <strong>tokens</strong>, which are chunks
+          roughly three quarters the length of an average English word.
+          Common words are usually one token. Longer or rarer words split
+          into several.
+        </p>
+        <p>
+          Each token maps to a number, and each number maps to a long list of
+          values that positions the token in relation to every other token
+          the model knows. Words used in similar contexts end up positioned
+          near each other, which is how a model can tell that "physician" and
+          "doctor" are closely related without being told.
+        </p>
+
+        <figure class="media-figure">
+          <img src="../../assets/images/lesson-2-tokens.png" alt="A sentence broken into tokens, each mapped to a numeric id"
+               onerror="this.closest('.media-figure').classList.add('is-missing')" />
+          <div class="media-fallback">
+            <svg width="520" height="150" viewBox="0 0 520 150" role="img" aria-label="The sentence 'Summarize this report' split into four tokens with numeric ids">
+              <text x="10" y="24" font-family="sans-serif" font-size="11" fill="#52525b">Your text</text>
+              <rect x="10" y="34" width="300" height="32" rx="7" fill="#fafafa" stroke="#e5e7eb" stroke-width="1.4"/>
+              <text x="24" y="55" font-family="sans-serif" font-size="12" fill="#18181b">"Summarizing this report"</text>
+
+              <path d="M160 70 V88" stroke="#a1a1aa" stroke-width="1.8" marker-end="url(#l2a)"/>
+              <text x="330" y="55" font-family="sans-serif" font-size="10" fill="#a1a1aa">split into tokens</text>
+
+              <g font-family="sans-serif" font-size="11" font-weight="700">
+                <rect x="10" y="92" width="76" height="30" rx="6" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.4"/>
+                <text x="48" y="112" text-anchor="middle" fill="#3730a3">Summar</text>
+                <rect x="92" y="92" width="52" height="30" rx="6" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.4"/>
+                <text x="118" y="112" text-anchor="middle" fill="#0f766e">izing</text>
+                <rect x="150" y="92" width="52" height="30" rx="6" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.4"/>
+                <text x="176" y="112" text-anchor="middle" fill="#3730a3">this</text>
+                <rect x="208" y="92" width="66" height="30" rx="6" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.4"/>
+                <text x="241" y="112" text-anchor="middle" fill="#0f766e">report</text>
+              </g>
+              <g font-family="sans-serif" font-size="9" fill="#71717a" text-anchor="middle">
+                <text x="48" y="138">18422</text><text x="118" y="138">2890</text>
+                <text x="176" y="138">651</text><text x="241" y="138">4109</text>
+              </g>
+              <text x="300" y="112" font-family="sans-serif" font-size="10" fill="#a1a1aa">4 tokens, not 3 words</text>
+              <defs><marker id="l2a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#a1a1aa"/></marker></defs>
+            </svg>
+          </div>
+          <figcaption>Tokens are why usage is billed per token and why word counts never match exactly.</figcaption>
+        </figure>
+
+        <h2>Output arrives one token at a time</h2>
+        <p>
+          When you send a prompt, the model does not compose a whole answer
+          and hand it over. It predicts the single most likely next token,
+          appends it, then re-reads everything including what it just wrote
+          and predicts the next one. That loop runs until the response is
+          finished.
+        </p>
+        <p>
+          At every step the model produces a probability across its entire
+          vocabulary. Given "The capital of France is", the token "Paris"
+          might carry 97% of the probability, with the remainder spread thin
+          across thousands of alternatives.
+        </p>
+
+        <div class="lesson-illustration">
+          <svg width="500" height="180" viewBox="0 0 500 180" role="img" aria-label="Probability bars for the next token after the phrase the capital of France is">
+            <rect x="10" y="14" width="234" height="32" rx="7" fill="#fafafa" stroke="#e5e7eb" stroke-width="1.4"/>
+            <text x="24" y="35" font-family="sans-serif" font-size="12" fill="#18181b">"The capital of France is ___"</text>
+            <text x="256" y="35" font-family="sans-serif" font-size="10" fill="#a1a1aa">next token probability</text>
+
+            <g font-family="sans-serif" font-size="11">
+              <text x="10" y="76" fill="#18181b" font-weight="700">Paris</text>
+              <rect x="80" y="64" width="330" height="16" rx="4" fill="#e5e7eb"/>
+              <rect x="80" y="64" width="320" height="16" rx="4" fill="#4f46e5"/>
+              <text x="420" y="77" fill="#3730a3" font-weight="700">97%</text>
+
+              <text x="10" y="106" fill="#52525b">located</text>
+              <rect x="80" y="94" width="330" height="16" rx="4" fill="#e5e7eb"/>
+              <rect x="80" y="94" width="7" height="16" rx="3" fill="#14b8a6"/>
+              <text x="420" y="107" fill="#0f766e">2%</text>
+
+              <text x="10" y="136" fill="#52525b">a</text>
+              <rect x="80" y="124" width="330" height="16" rx="4" fill="#e5e7eb"/>
+              <rect x="80" y="124" width="3" height="16" rx="1.5" fill="#14b8a6"/>
+              <text x="420" y="137" fill="#0f766e">0.6%</text>
+
+              <text x="10" y="166" fill="#a1a1aa">everything else</text>
+              <rect x="80" y="154" width="330" height="16" rx="4" fill="#e5e7eb"/>
+              <rect x="80" y="154" width="2" height="16" rx="1" fill="#a1a1aa"/>
+              <text x="420" y="167" fill="#a1a1aa">0.4%</text>
+            </g>
+          </svg>
+        </div>
+
+        <h2>Why the same question gives different answers</h2>
+        <p>
+          If the model always took the highest probability token, output
+          would be identical every time and noticeably flat and repetitive.
+          Instead it samples from the distribution, and a setting usually
+          called <strong>temperature</strong> controls how adventurous that
+          sampling is.
+        </p>
+        <p>
+          Low temperature stays close to the most likely token, which suits
+          factual work and code. Higher temperature reaches further down the
+          list, which produces more varied and creative writing along with
+          more opportunities to go wrong. This sampling step is the direct
+          reason repeating a prompt can produce a different answer, and it is
+          expected behaviour rather than a defect.
+        </p>
+
+        <h2>The context window is the working memory</h2>
+        <p>
+          A model can only consider a fixed amount of text at once, called
+          the context window, measured in tokens. Everything in a
+          conversation, your prompt, any pasted document and the model's own
+          replies, competes for that space.
+        </p>
+        <p>
+          Nothing outside the window exists as far as the model is concerned.
+          This explains a common frustration: in a very long conversation,
+          details from early on stop being reflected in the answers. The
+          model has not forgotten in any human sense. Those tokens simply
+          fell outside what it can currently see.
+        </p>
+
+        <div class="myth-grid">
+          <div class="myth-card">
+            <h5>Common belief</h5>
+            <p>The model looks up answers in a stored database of facts, so a wrong answer means the database has an error in it.</p>
+          </div>
+          <div class="reality-card">
+            <h5>What is actually happening</h5>
+            <p>There is no database. Facts are dissolved into statistical patterns across billions of parameters. A wrong answer usually means a plausible pattern won out over an accurate one.</p>
+          </div>
+        </div>
+
+        <div class="mistakes">
+          <h4>Mistakes worth avoiding early</h4>
+          <ul>
+            <li><strong>Reporting varied output as a bug.</strong> Sampling makes variation the default. Ask instead whether the task needs determinism, and lower the temperature if the tool exposes that control.</li>
+            <li><strong>Pasting an enormous document and expecting full recall.</strong> If it does not fit the context window it is not being read. Chunk long material and work through it in pieces.</li>
+            <li><strong>Assuming more parameters always means better.</strong> A smaller model tuned for your task often beats a larger general one, at a fraction of the cost and latency.</li>
+          </ul>
+        </div>
+
+        <details class="deep-dive">
+          <summary>Deep dive: what attention actually does</summary>
+          <div class="deep-dive-body">
+            <p>
+              The 2017 transformer paper was titled "Attention Is All You
+              Need", and attention is the mechanism that made modern language
+              models practical.
+            </p>
+            <p>
+              Earlier architectures read text strictly in sequence, which made
+              them slow to train and prone to losing track across long
+              passages. Attention lets the model weigh the relevance of every
+              token against every other token in the window simultaneously.
+            </p>
+            <p>
+              Take the sentence "The trophy did not fit in the suitcase
+              because it was too big." Resolving what "it" refers to requires
+              connecting that token back to "trophy" rather than "suitcase".
+              Attention assigns a high weight to that specific pairing.
+              Stack this operation across many layers and the model builds up
+              a rich representation of how everything in the passage relates.
+            </p>
+            <p>
+              Because these comparisons happen in parallel rather than in
+              sequence, training scales across thousands of chips at once.
+              That parallelism, more than any single conceptual leap, is what
+              made models of this size economically possible.
+            </p>
+          </div>
+        </details>
+
+        <div class="scenario" data-scenario data-lesson-id="lesson-2">
+          <span class="scenario-tag">Decision point</span>
+          <h3 class="scenario-title">The colleague who thinks the tool is broken</h3>
+          <p class="scenario-setup">
+            A teammate runs the same prompt through an AI assistant twice and
+            gets two noticeably different summaries of the same document.
+            They message you: "This thing is unreliable, it cannot even give
+            the same answer twice. We should stop using it." What do you say?
+          </p>
+          <div class="scenario-choices">
+            <button type="button" class="scenario-choice" data-quality="poor"
+              data-feedback="Filing this as a defect wastes everyone's time and, worse, teaches the team to distrust a tool for the wrong reason. Sampling makes variation the expected behaviour, not a fault. The real risk here is that genuine problems get dismissed later because the team already cried wolf about the normal case.">
+              Agree it looks broken and raise it with the vendor as a defect.
+            </button>
+            <button type="button" class="scenario-choice" data-quality="ok"
+              data-feedback="Practical, and it does get them unblocked today. But it leaves the underlying misunderstanding in place, so the same confusion returns the first time output varies on something that matters. Pair the workaround with the reason, and ideally check whether the tool exposes a temperature or determinism setting worth turning down for summarisation work.">
+              Tell them to just use the first response and move on.
+            </button>
+            <button type="button" class="scenario-choice" data-quality="best"
+              data-feedback="This is the move. Explain that the model samples from a probability distribution rather than looking up a fixed answer, so variation is designed in. Then ask the question that actually matters: does this task need identical output every run? For a contract clause or a code change, yes, and you lower temperature or pin the output. For a summary or a first draft, the variation is harmless and sometimes useful.">
+              Explain that sampling makes variation expected, then ask whether this task actually needs identical output.
+            </button>
+          </div>
+          <p class="scenario-hint">Open the other options to see how those would have played out.</p>
+          <div class="scenario-result"></div>
+        </div>
+
+        <div class="key-takeaways">
+          <h4>Key takeaways</h4>
+          <ul>
+            <li>Training is a simple correction loop run at enormous scale, not a set of authored rules.</li>
+            <li>Text becomes tokens, and generation happens one token at a time using probabilities.</li>
+            <li>Sampling is why repeated prompts give varied answers, and temperature controls how varied.</li>
+            <li>The context window is the model's entire working memory. Anything outside it is invisible.</li>
+          </ul>
+        </div>
+
+        <div class="resource-links">
+          <h4>Go deeper</h4>
+          <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank" rel="noopener">Wikipedia: Large language model</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)" target="_blank" rel="noopener">Wikipedia: Transformer architecture</a></li>
+            <li><a href="https://www.anthropic.com/research" target="_blank" rel="noopener">Anthropic Research</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="quiz-block">
+        <h3 class="section-heading">Check your understanding</h3>
+        <form data-quiz-form>
+          <div class="quiz-question" data-correct="1" data-explain="Nobody writes the rules. Training repeatedly measures how wrong a prediction was and nudges parameters to reduce that error, across an enormous number of examples.">
+            <p class="q-text">1. Training a model means:</p>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q1" value="0"> A programmer writing explicit rules for each scenario</label>
+              <label class="quiz-option"><input type="radio" name="q1" value="1"> Repeatedly predicting, measuring the error, and adjusting parameters</label>
+              <label class="quiz-option"><input type="radio" name="q1" value="2"> Copying a database of verified facts into the model</label>
+              <label class="quiz-option"><input type="radio" name="q1" value="3"> Recording every answer a human gives it</label>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="2" data-explain="The model samples from a probability distribution rather than always taking the top token. Temperature controls how far down the list it is willing to reach, so identical prompts can produce different answers.">
+            <p class="q-text">2. Why can the same prompt produce different answers?</p>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q2" value="0"> The training data changes between requests</label>
+              <label class="quiz-option"><input type="radio" name="q2" value="1"> The model is malfunctioning and should be reported</label>
+              <label class="quiz-option"><input type="radio" name="q2" value="2"> Output is sampled from a probability distribution rather than fixed</label>
+              <label class="quiz-option"><input type="radio" name="q2" value="3"> Each user receives a personally customised model</label>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <div class="quiz-question" data-correct="0" data-explain="The context window is the fixed amount of text the model can consider at once. Content that falls outside it is not visible to the model at all, which is why very long conversations start losing earlier detail.">
+            <p class="q-text">3. The context window determines:</p>
+            <div class="quiz-options">
+              <label class="quiz-option"><input type="radio" name="q3" value="0"> How much text the model can consider at one time</label>
+              <label class="quiz-option"><input type="radio" name="q3" value="1"> How fast the model responds</label>
+              <label class="quiz-option"><input type="radio" name="q3" value="2"> How many users can access it simultaneously</label>
+              <label class="quiz-option"><input type="radio" name="q3" value="3"> How creative the writing style will be</label>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Answers</button>
+        </form>
+        <div class="quiz-summary" data-quiz-summary>
+          <div class="score" data-quiz-score>0 / 3</div>
+          <p data-quiz-summary-text></p>
+          <div id="pass-actions" style="display:none;">
+            <button class="btn btn-primary" id="continue-btn">Mark Lesson Complete and Continue</button>
+          </div>
+          <div id="fail-actions" style="display:none;">
+            <button class="btn btn-secondary" id="retry-btn">Retry Quiz</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson-footer-nav">
+        <a href="lesson-1.html" class="btn btn-secondary">Back: What Is AI?</a>
+        <a href="lesson-3.html" class="btn btn-secondary">Next: AI Tools You'll Encounter</a>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 BerwynAI Academy</span>
+      <span>A portfolio project demonstrating course design and front end build.</span>
+    </div>
+  </footer>
+
+  <script src="../../js/progress.js?v=202608151122"></script>
+  <script src="../../js/gamification.js?v=202608151122"></script>
+  <script src="../../js/quiz.js?v=202608151122"></script>
+  <script src="../../js/scenario.js?v=202608151122"></script>
+  <script>
+    const COURSE_ID = "ai-fundamentals";
+    const LESSON_ID = "lesson-2";
+    const sidebar = document.getElementById("course-sidebar");
+
+    CourseProgress.recordVisit(COURSE_ID);
+    CourseProgress.renderSidebar(sidebar, COURSE_ID, LESSON_ID);
+    Gamification.evaluateBadges(COURSE_ID);
+
+    if (Gamification.isLessonLocked(COURSE_ID, LESSON_ID)) {
+      document.getElementById("lock-gate").style.display = "block";
+      document.getElementById("lesson-content").style.display = "none";
+    }
+    document.getElementById("skip-lock").addEventListener("click", function (e) {
+      e.preventDefault();
+      document.getElementById("lock-gate").style.display = "none";
+      document.getElementById("lesson-content").style.display = "";
+    });
+
+    initScenario({ courseId: COURSE_ID, lessonId: LESSON_ID });
+
+    initQuiz({
+      formSelector: "[data-quiz-form]",
+      summarySelector: "[data-quiz-summary]",
+      passRatio: 0.67,
+      passMessage: "Good. You now have a working mental model of what happens under the hood.",
+      failMessage: "You need at least 2 of 3 to continue. Review the material above and try again.",
+      onComplete: function (result) {
+        CourseProgress.setQuizScore(COURSE_ID, LESSON_ID, result.correctCount, result.total);
+        document.getElementById(result.passed ? "pass-actions" : "fail-actions").style.display = "block";
+
+        if (result.passed) {
+          CourseProgress.markLessonComplete(COURSE_ID, LESSON_ID);
+          const xpGains = Gamification.awardLessonXp(COURSE_ID, LESSON_ID, result.correctCount, result.total);
+          const newBadges = Gamification.evaluateBadges(COURSE_ID);
+          Gamification.showRewards(xpGains, newBadges);
+          CourseProgress.renderSidebar(sidebar, COURSE_ID, LESSON_ID);
+        }
+      },
+    });
+
+    document.getElementById("continue-btn").addEventListener("click", function () {
+      window.location.href = "lesson-3.html";
+    });
+    document.getElementById("retry-btn").addEventListener("click", function () {
+      window.location.reload();
+    });
+  </script>
+
+  <script src="../../js/reveal.js?v=202608151122"></script>
+
+</body>
+</html>
