@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Confidentiality Trap | What NOT to Do with AI</title>
+  <meta name="description" content="A short film and hands on module for accounting firms: what happens when client tax data goes into a public AI tool, and the one habit that prevents it." />
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../../css/styles.css" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BerwynAI Academy" />
+  <meta property="og:title" content="The Confidentiality Trap | What NOT to Do with AI" />
+  <meta property="og:description" content="A short film and hands on module for accounting firms: what happens when client tax data goes into a public AI tool, and the one habit that prevents it." />
+  <meta property="og:image" content="../../assets/images/og-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Confidentiality Trap | What NOT to Do with AI" />
+  <meta name="twitter:image" content="../../assets/images/og-card.jpg" />
+</head>
+<body>
+
+  <a class="skip-link" href="#module">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../../index.html">
+        <span class="mark">B</span>
+        <span>BerwynAI <span class="sub">Academy</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="../../index.html">Courses</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="module" style="max-width: 860px;">
+
+    <p class="breadcrumb"><a href="../../index.html">Courses</a> / The Confidentiality Trap</p>
+
+    <div class="lesson-header">
+      <span class="kicker">Module 1 &middot; Accounting &amp; tax advisory</span>
+      <h1>The Confidentiality Trap</h1>
+    </div>
+
+    <p class="intro-lead">
+      A rushed client call, a helpful instinct, and a tax return pasted into a
+      free AI tool. Nobody did anything malicious. The firm is exposed anyway.
+    </p>
+
+    <div class="module-meta">
+      <span>12 min film</span>
+      <span>3 checkpoints</span>
+      <span>Hands on exercise</span>
+      <span>Certificate</span>
+    </div>
+
+    <!-- The trailer is the one asset that exists as finished film today. It
+         sits above the acts rather than inside one, because it spans the
+         whole story and is what a firm would be shown before buying. -->
+    <figure class="trailer">
+      <video controls preload="metadata" playsinline poster="assets/images/trailer-poster.jpg" src="video/trailer.mp4"></video>
+      <figcaption>
+        <span class="trailer-tag">Preview</span>
+        A 30 second look at the module. The full three act film runs 12 minutes.
+      </figcaption>
+    </figure>
+
+    <div class="short-version">
+      <h4>What you will be able to do</h4>
+      <ul>
+        <li>Name the categories of client data that must never enter a public AI tool.</li>
+        <li>Apply a one-sentence test to a live client question, under time pressure.</li>
+        <li>Rewrite an identifying prompt into one that is safe <em>and</em> still useful.</li>
+      </ul>
+    </div>
+
+    <div class="callout" style="margin-bottom:34px;">
+      <p style="margin:0;">
+        <strong>This module does not run on its own.</strong> Each act ends with
+        a question, and the next act opens when you answer it. Watching a film
+        and recognising the lesson is not the same as being able to retrieve it
+        on a Tuesday in April with a client on speakerphone &mdash; the
+        questions are what make the difference.
+      </p>
+    </div>
+
+    <!-- ============================ ACT 1 ============================ -->
+    <section class="act" data-act="1">
+      <div class="act-head">
+        <span class="act-num">Act 1</span>
+        <h2>The Mistake</h2>
+        <span class="act-time">4 min</span>
+      </div>
+
+      <div class="act-body">
+        <div class="video-slot" data-draft data-poster="assets/images/act-1-poster.jpg" data-video="act-1.mp4" data-label="Act 1: The Mistake"></div>
+
+        <div class="lesson-body">
+          <p>
+            Dana owns a small CPA and tax advisory firm. Renata, a retail client,
+            calls on her lunch break about an IRS notice she does not understand
+            and wants a straight answer before she has to get back to the shop.
+          </p>
+          <p>
+            Dana opens a free public AI tool and pastes in the notice &mdash; and,
+            for context, Renata's prior year return. Social Security number,
+            business EIN, reported income, all of it. Then she stops.
+          </p>
+          <p class="pull-quote">
+            &ldquo;Would I say this out loud, in this room, to this person?&rdquo;
+          </p>
+          <p>
+            Dana did not do anything a rushed, caring professional would not do.
+            The instinct to give the tool context &mdash; paste the whole return
+            so it understands the situation &mdash; is exactly what turns a quick
+            question into a disclosure. The tool never needed to know it was
+            Renata, or that Renata existed, to explain what the notice means.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="checkpoint" data-checkpoint="1" data-opens="2" data-answer="b">
+      <span class="cp-tag">Checkpoint 1</span>
+      <p class="cp-q">
+        Dana wants AI help understanding Renata's notice. Which approach gets
+        her what she needs without disclosing client data?
+      </p>
+      <div class="cp-options">
+        <button type="button" class="cp-option" data-choice="a"
+          data-feedback="This is the disclosure itself. The full notice and return carry the SSN, the EIN and the income figures, and none of them are needed to explain what the notice type means.">
+          Paste the full notice and the prior-year return so the tool has complete context
+        </button>
+        <button type="button" class="cp-option" data-choice="b"
+          data-feedback="The notice type and the nature of the question are enough to get a genuinely useful answer, and none of it identifies anyone. This is the rewrite the whole module is about.">
+          Describe the notice type and the question in general terms, with no names, numbers or attachments
+        </button>
+        <button type="button" class="cp-option" data-choice="c"
+          data-feedback="Removing the name is not enough. An SSN or EIN identifies a person on its own, and the financial detail is still that client's confidential return information whether or not her name sits next to it.">
+          Paste the return but delete Renata's name first, leaving the numbers in
+        </button>
+      </div>
+      <div class="cp-result"></div>
+    </div>
+
+    <!-- ============================ ACT 2 ============================ -->
+    <section class="act is-locked" data-act="2">
+      <div class="act-head">
+        <span class="act-num">Act 2</span>
+        <h2>The Consequence</h2>
+        <span class="act-time">3 min</span>
+      </div>
+
+      <div class="act-gate">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        <span>Answer Checkpoint 1 above and this act opens.</span>
+      </div>
+
+      <div class="act-body">
+        <div class="video-slot" data-draft data-poster="assets/images/act-2-poster.jpg" data-video="act-2.mp4" data-label="Act 2: The Consequence"></div>
+
+        <div class="lesson-body">
+          <p>
+            The next morning Grace, the senior partner, comes in holding a
+            printed alert. The firm's monitoring flagged an outbound message
+            overnight containing a Social Security number pattern, sent to an AI
+            domain nobody had reviewed. It came from Dana's login.
+          </p>
+          <p>
+            Grace is not accusatory. She is precise, which is worse and more
+            useful.
+          </p>
+
+          <div class="stakes-box">
+            <h4>What was actually at stake</h4>
+            <ol>
+              <li>
+                <strong>The disclosure already happened.</strong> Federal law
+                restricts a preparer from disclosing return information without
+                the client's consent. That the tool was not malicious does not
+                enter into it. The exposure occurred the moment the data left
+                approved systems.
+              </li>
+              <li>
+                <strong>Nobody knows where it lives now.</strong> If that tool
+                retains or logs what is pasted into it, the firm cannot say
+                where Renata's return is, or for how long.
+              </li>
+              <li>
+                <strong>It is a trust conversation waiting to happen.</strong>
+                If Renata ever found out &mdash; whether or not anything was
+                ever done with her data &mdash; that is a conversation with her,
+                and probably with others once word travels.
+              </li>
+            </ol>
+          </div>
+
+          <p>
+            None of that requires anything bad to have occurred. That is the
+            part worth carrying: <em>waiting to see whether something happens is
+            not a safeguard.</em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="checkpoint" data-checkpoint="2" data-opens="3" data-answer="b">
+      <span class="cp-tag">Checkpoint 2</span>
+      <p class="cp-q">
+        Grace says the exposure existed &ldquo;the moment it left our
+        systems.&rdquo; In practice, what does that mean?
+      </p>
+      <div class="cp-options">
+        <button type="button" class="cp-option" data-choice="a"
+          data-feedback="Misuse by the vendor would make it worse, but the restriction is on the disclosure, not on what happens afterwards. A firm that waits to find out has already been exposed for however long it waited.">
+          The firm is only at risk if the AI company actually misuses the data
+        </button>
+        <button type="button" class="cp-option" data-choice="b"
+          data-feedback="Exactly. The rule is about the disclosure occurring, not about harm being provable later. This is why the habit has to sit before the paste, not after the incident.">
+          The disclosure itself is the problem &mdash; the outcome does not determine whether it happened
+        </button>
+        <button type="button" class="cp-option" data-choice="c"
+          data-feedback="Whether the client finds out determines how uncomfortable it gets, not whether it occurred. A firm whose control is 'hope nobody notices' has no control.">
+          It only becomes a real problem if the client finds out
+        </button>
+      </div>
+      <div class="cp-result"></div>
+    </div>
+
+    <!-- ============================ ACT 3 ============================ -->
+    <section class="act is-locked" data-act="3">
+      <div class="act-head">
+        <span class="act-num">Act 3</span>
+        <h2>The Fix</h2>
+        <span class="act-time">3 min</span>
+      </div>
+
+      <div class="act-gate">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        <span>Answer Checkpoint 2 above and this act opens.</span>
+      </div>
+
+      <div class="act-body">
+        <div class="video-slot" data-draft data-poster="assets/images/act-3-poster.jpg" data-video="act-3.mp4" data-label="Act 3: The Fix"></div>
+
+        <div class="lesson-body">
+          <p>
+            A few days later Renata calls again &mdash; different question, same
+            time pressure. Can she claim home office expenses now that she works
+            from the back room?
+          </p>
+          <p>
+            Dana types: <em>&ldquo;What are the current IRS eligibility rules for
+            the home office deduction for a small retail business owner?&rdquo;</em>
+          </p>
+          <p>
+            Notice what changed. The question is specific enough to be useful and
+            general enough that it could belong to any client, or to no client at
+            all. Then she closes the tool, opens Renata's actual file herself,
+            and checks the rule against Renata's real square footage.
+          </p>
+          <p>
+            Same client. Same deadline pressure. Same instinct to be fast and
+            precise. The only thing that moved is where the client's specific
+            numbers lived &mdash; in Dana's own review, not in a prompt.
+          </p>
+
+          <div class="workflow-box">
+            <h4>The safe workflow</h4>
+            <ol>
+              <li><strong>Ask first:</strong> is this general, or does it need this client's numbers?</li>
+              <li><strong>General</strong> &rarr; AI can help. No identifiers, no attachments.</li>
+              <li><strong>Client-specific</strong> &rarr; you handle it, or use only a firm-approved tool with the figures anonymised.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="checkpoint" data-checkpoint="3" data-opens="4" data-answer="b">
+      <span class="cp-tag">Checkpoint 3</span>
+      <p class="cp-q">
+        What is the one-sentence test Dana used to decide whether a question was
+        safe to send as written?
+      </p>
+      <div class="cp-options">
+        <button type="button" class="cp-option" data-choice="a"
+          data-feedback="This makes discovery the control rather than disclosure. It is also the test that fails hardest under pressure, because the honest answer is usually 'probably not', which is not a safeguard.">
+          &ldquo;Is this client ever going to find out?&rdquo;
+        </button>
+        <button type="button" class="cp-option" data-choice="b"
+          data-feedback="Right. It puts the test on the question rather than on the tool or the client, which is the only part you fully control in the moment.">
+          &ldquo;Is this general enough to belong to any client, or does it need this one's numbers?&rdquo;
+        </button>
+        <button type="button" class="cp-option" data-choice="c"
+          data-feedback="Worth knowing, but it is a procurement question answered once a year, not a test you can run in the four seconds before you hit paste. And a trustworthy tool given identifying data is still a disclosure.">
+          &ldquo;Is this AI tool trustworthy?&rdquo;
+        </button>
+      </div>
+      <div class="cp-result"></div>
+    </div>
+
+    <!-- ========================== EXERCISE ========================== -->
+    <section class="act is-locked" data-act="4">
+      <div class="act-head">
+        <span class="act-num">Hands on</span>
+        <h2>Write the Prompt</h2>
+        <span class="act-time">Untimed</span>
+      </div>
+
+      <div class="act-gate">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        <span>Answer Checkpoint 3 above and the exercise opens.</span>
+      </div>
+
+      <div class="act-body">
+        <div class="redact" data-redact data-module="module-1">
+          <span class="redact-tag">Hands on</span>
+          <h3>Redact this notice</h3>
+          <p class="redact-intro">
+            Below is a client notice. Write the prompt you would actually send to
+            an AI tool to understand it. Your text is checked in this browser
+            &mdash; nothing is uploaded, which is the only defensible way to run
+            an exercise about not sending data somewhere it should not go.
+          </p>
+
+          <div class="notice-card">
+<span class="nc-label">NOTICE TYPE:</span> CP2000<br />
+<span class="nc-label">TAXPAYER:</span> <span class="nc-sensitive">Marcus Webb</span><br />
+<span class="nc-label">SSN:</span> <span class="nc-sensitive">900-55-0148</span><br />
+<span class="nc-label">EIN:</span> <span class="nc-sensitive">00-7734521</span><br />
+<span class="nc-label">TAX YEAR:</span> 2024<br />
+<span class="nc-label">SUMMARY:</span> Discrepancy between income reported on
+return (<span class="nc-sensitive">$84,200</span>) and third-party reporting
+(<span class="nc-sensitive">$91,750</span>).
+          </div>
+          <p class="notice-fine">
+            Fabricated sample. The SSN uses a range never issued and the EIN
+            prefix is unassigned &mdash; this is not anyone's record.
+          </p>
+
+          <label class="redact-label" for="redact-input">Your prompt</label>
+          <textarea id="redact-input" data-redact-input
+            placeholder="Type the prompt exactly as you would send it&hellip;"></textarea>
+          <button type="button" class="btn btn-primary" data-redact-check>Check my prompt</button>
+
+          <div class="redact-result" data-redact-result></div>
+
+          <div class="redact-model" data-redact-model>
+            <div class="model-answer">
+              <strong>One prompt that works</strong>
+              &ldquo;What does a CP2000 notice mean, and what are the general next
+              steps when there is a discrepancy between income reported on a
+              return and third-party reporting such as a 1099?&rdquo;
+              <p style="margin:10px 0 0; font-size:0.89rem; color:var(--color-text-muted);">
+                Yours does not have to match this. It has to carry no identifying
+                data and still name the notice type and the nature of the
+                discrepancy &mdash; safe and useless is not the goal.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ======================= ASSESSMENT ======================= -->
+        <div class="quiz-block">
+          <h3 class="section-heading">Final assessment</h3>
+          <p style="margin-top:0; color:var(--color-text-muted);">
+            Five questions. Four correct to pass and earn the certificate. You
+            can retake it as many times as you need.
+          </p>
+
+          <form data-quiz-form>
+            <div class="quiz-question" data-correct="1" data-explain="Federal law restricts a tax preparer from disclosing a client's return information without consent. Handing it to a third-party tool the client never agreed to is a disclosure, regardless of intent.">
+              <p class="q-text">1. What makes pasting a client's return into a public AI tool a regulatory problem for a tax preparer specifically?</p>
+              <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="q1" value="0"> It breaches the AI vendor's terms of service</label>
+                <label class="quiz-option"><input type="radio" name="q1" value="1"> Federal law restricts disclosing client return information without consent</label>
+                <label class="quiz-option"><input type="radio" name="q1" value="2"> It is only a problem if the firm has its own written AI policy</label>
+                <label class="quiz-option"><input type="radio" name="q1" value="3"> Nothing, as long as the answer is not relied on</label>
+              </div>
+              <div class="quiz-feedback"></div>
+            </div>
+
+            <div class="quiz-question" data-correct="0" data-explain="Not training on data is not the same as not receiving, processing, transmitting or retaining it. The exposure exists at the point of disclosure, which has already happened by the time any training question arises.">
+              <p class="q-text">2. A tool states it does not train on submitted data. Is it now safe to paste a full client return?</p>
+              <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="q2" value="0"> No &mdash; not training on data is different from not receiving or retaining it</label>
+                <label class="quiz-option"><input type="radio" name="q2" value="1"> Yes &mdash; that statement removes the disclosure risk</label>
+                <label class="quiz-option"><input type="radio" name="q2" value="2"> Yes, provided the client is told afterwards</label>
+                <label class="quiz-option"><input type="radio" name="q2" value="3"> Yes, as long as the chat is deleted the same day</label>
+              </div>
+              <div class="quiz-feedback"></div>
+            </div>
+
+            <div class="quiz-question" data-correct="2" data-explain="A general question describes the category or situation without identifying anyone. A client-specific question needs that client's actual identity or figures to answer, which is the work that stays inside the firm.">
+              <p class="q-text">3. What separates a &ldquo;general&rdquo; question from a &ldquo;client-specific&rdquo; one?</p>
+              <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="q3" value="0"> Its length &mdash; shorter questions carry less risk</label>
+                <label class="quiz-option"><input type="radio" name="q3" value="1"> Whether the client has given verbal permission</label>
+                <label class="quiz-option"><input type="radio" name="q3" value="2"> Whether answering it requires that client's identity or actual numbers</label>
+                <label class="quiz-option"><input type="radio" name="q3" value="3"> Whether it concerns a federal or a state matter</label>
+              </div>
+              <div class="quiz-feedback"></div>
+            </div>
+
+            <div class="quiz-question" data-correct="3" data-explain="The disclosure is the event. Data leaving approved systems is what creates the exposure, and no later absence of visible harm undoes it.">
+              <p class="q-text">4. Why did Grace treat the incident as real exposure when nothing visibly bad had happened?</p>
+              <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="q4" value="0"> Because the firm's insurer requires all incidents to be logged</label>
+                <label class="quiz-option"><input type="radio" name="q4" value="1"> Because Dana used a personal rather than a firm login</label>
+                <label class="quiz-option"><input type="radio" name="q4" value="2"> Because the client had not yet been notified</label>
+                <label class="quiz-option"><input type="radio" name="q4" value="3"> Because the disclosure itself is the exposure, not any later harm</label>
+              </div>
+              <div class="quiz-feedback"></div>
+            </div>
+
+            <div class="quiz-question" data-correct="1" data-explain="An EIN identifies a business on its own, exactly as an SSN identifies a person. Stripping the name while leaving the tax ID is the most common half-measure, and it is not redaction.">
+              <p class="q-text">5. A colleague removes the client's name but leaves the EIN and income figures in the prompt. What would you tell them?</p>
+              <div class="quiz-options">
+                <label class="quiz-option"><input type="radio" name="q5" value="0"> That is sufficient &mdash; the name was the identifying part</label>
+                <label class="quiz-option"><input type="radio" name="q5" value="1"> The EIN identifies the business on its own, so this is still a disclosure</label>
+                <label class="quiz-option"><input type="radio" name="q5" value="2"> It is fine if the figures are rounded first</label>
+                <label class="quiz-option"><input type="radio" name="q5" value="3"> It is fine because an EIN is public information</label>
+              </div>
+              <div class="quiz-feedback"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Submit assessment</button>
+          </form>
+
+          <div class="quiz-summary" data-quiz-summary>
+            <div class="score" data-quiz-score>0 / 5</div>
+            <p data-quiz-summary-text></p>
+            <div id="pass-actions" style="display:none;">
+              <a href="certificate.html" class="btn btn-primary">Claim your certificate</a>
+            </div>
+            <div id="fail-actions" style="display:none;">
+              <button class="btn btn-secondary" id="retry-btn">Retake the assessment</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="key-takeaways">
+          <h4>Before you close this</h4>
+          <ul>
+            <li>Never paste an SSN, EIN, full return, or notice text containing identifying data into a public or unreviewed tool.</li>
+            <li>Ask first: general, or client-specific? General is safe to ask generally. Client-specific stays with you.</li>
+            <li>If you are unsure whether something identifies someone, treat it as if it does.</li>
+            <li>Report an accidental disclosure immediately. Early reporting materially changes what a firm can do about it.</li>
+          </ul>
+        </div>
+
+        <div class="callout" style="margin-bottom:40px;">
+          <p style="margin:0;">
+            <strong>For the firm, not just the individual.</strong> A one-page AI
+            use policy your staff can actually follow is the companion to this
+            module &mdash; the habit holds better when it is written down and
+            someone owns it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 BerwynAI Academy</span>
+      <span>A portfolio project demonstrating course design and front end build.</span>
+    </div>
+  </footer>
+
+  <script src="../../js/progress.js"></script>
+  <script src="../../js/gamification.js"></script>
+  <script src="../../js/quiz.js"></script>
+  <script src="../../js/acts.js"></script>
+  <script src="../../js/redact.js"></script>
+  <script src="../../js/video.js"></script>
+  <script src="../../js/reveal.js"></script>
+  <script>
+    const COURSE_ID = "ai-confidentiality";
+    const MODULE_ID = "module-1";
+
+    CourseProgress.recordVisit(COURSE_ID);
+    Gamification.evaluateBadges(COURSE_ID);
+    initVideoSlots({ base: "video/" });
+    initActs({ courseId: COURSE_ID, moduleId: MODULE_ID });
+    RedactExercise.init({ courseId: COURSE_ID, moduleId: MODULE_ID });
+
+    initQuiz({
+      formSelector: "[data-quiz-form]",
+      summarySelector: "[data-quiz-summary]",
+      passRatio: 0.8,
+      passMessage: "Passed. Your certificate is ready.",
+      failMessage: "Not at four of five yet. The explanations above show where it slipped — retake it whenever you are ready.",
+      onComplete: function (result) {
+        CourseProgress.setExamResult(COURSE_ID, result.correctCount, result.total, result.passed);
+        document.getElementById(result.passed ? "pass-actions" : "fail-actions").style.display = "block";
+
+        if (result.passed) {
+          CourseProgress.markLessonComplete(COURSE_ID, MODULE_ID);
+          const gains = Gamification.awardLessonXp(COURSE_ID, MODULE_ID, result.correctCount, result.total)
+            .concat(Gamification.awardExamXp(COURSE_ID, result.correctCount, result.total, true));
+          Gamification.showRewards(gains, Gamification.evaluateBadges(COURSE_ID));
+        }
+      },
+    });
+
+    document.getElementById("retry-btn").addEventListener("click", function () {
+      window.location.reload();
+    });
+  </script>
+
+</body>
+</html>

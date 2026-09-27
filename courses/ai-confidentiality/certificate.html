@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Certificate | What NOT to Do with AI</title>
+  <meta name="description" content="Training completion record for The Confidentiality Trap." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../../css/styles.css" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BerwynAI Academy" />
+  <meta property="og:title" content="Your Certificate | What NOT to Do with AI" />
+  <meta property="og:description" content="Training completion record for The Confidentiality Trap." />
+  <meta property="og:image" content="../../assets/images/og-card.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Your Certificate | What NOT to Do with AI" />
+  <meta name="twitter:image" content="../../assets/images/og-card.jpg" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header no-print">
+    <div class="container">
+      <a class="brand" href="../../index.html">
+        <span class="mark">B</span>
+        <span>BerwynAI <span class="sub">Academy</span></span>
+      </a>
+      <nav class="site-nav">
+        <a href="../../index.html">Courses</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="certificate-wrap" id="main">
+
+    <div id="locked-section" style="display:none; text-align:center;">
+      <div class="callout callout-warning">
+        Pass the assessment in <a href="module-1.html">The Confidentiality Trap</a>
+        to claim your completion record.
+      </div>
+    </div>
+
+    <div id="name-form-section" style="display:none; text-align:center;">
+      <h1>Training completion record</h1>
+      <p class="lead">
+        Enter the name this should be issued to. Firms typically file these
+        against staff training records, so use the name your firm uses.
+      </p>
+      <div style="max-width:380px; margin:24px auto; display:flex; flex-direction:column; gap:12px;">
+        <input type="text" id="cert-name-input" placeholder="Full name"
+          style="padding:12px 14px; border:1px solid var(--color-border); border-radius:8px; font-size:1rem; font-family:var(--font-sans);" />
+        <input type="text" id="cert-firm-input" placeholder="Firm name (optional)"
+          style="padding:12px 14px; border:1px solid var(--color-border); border-radius:8px; font-size:1rem; font-family:var(--font-sans);" />
+        <button id="generate-btn" class="btn btn-primary">Generate record</button>
+      </div>
+    </div>
+
+    <div class="certificate" id="certificate" style="display:none;">
+      <p class="cert-eyebrow">What NOT to Do with AI</p>
+      <h1>Certificate of Completion</h1>
+      <p>This confirms that</p>
+      <p class="cert-name" id="cert-name-display">&nbsp;</p>
+      <p id="cert-firm-line" style="display:none;"></p>
+      <p>has completed the training module</p>
+      <h2>The Confidentiality Trap</h2>
+      <p style="font-size:0.9rem; color:var(--color-text-muted); margin-top:-6px;">
+        Protecting client data when using AI tools &middot; Accounting &amp; tax advisory
+      </p>
+
+      <p class="cert-meta" id="cert-date"></p>
+      <p class="cert-meta" id="cert-score"></p>
+
+      <div class="cert-covered">
+        <strong>Covered in this module</strong>
+        <ul>
+          <li>Categories of client data that must not enter a public AI tool</li>
+          <li>Why disclosure creates exposure independent of any later harm</li>
+          <li>Distinguishing general from client-specific questions</li>
+          <li>Rewriting an identifying prompt into a safe, useful one</li>
+        </ul>
+      </div>
+
+      <div id="cert-badges" style="margin-top:20px;"></div>
+
+      <p class="cert-meta" style="margin-top:24px; font-size:0.7rem; opacity:0.75; max-width:430px; margin-left:auto; margin-right:auto;">
+        A record of training completion. Not a professional certification, and
+        not legal or tax advice. Firms should confirm their own obligations with
+        their compliance lead.
+      </p>
+    </div>
+
+    <div class="no-print" id="post-cert-actions" style="display:none; text-align:center; margin-top:28px; gap:12px; justify-content:center;">
+      <button id="print-btn" class="btn btn-secondary">Print or save as PDF</button>
+      <a href="../../index.html" class="btn btn-secondary">Back to modules</a>
+    </div>
+
+  </div>
+
+  <footer class="site-footer no-print">
+    <div class="container">
+      <span>&copy; 2026 BerwynAI Academy</span>
+      <span>A portfolio project demonstrating course design and front end build.</span>
+    </div>
+  </footer>
+
+  <script src="../../js/progress.js"></script>
+  <script src="../../js/gamification.js"></script>
+  <script>
+    const COURSE_ID = "ai-confidentiality";
+    const exam = CourseProgress.getExamResult(COURSE_ID);
+    const savedName = CourseProgress.getCertName(COURSE_ID);
+    const savedFirm = (CourseProgress.getActivityResult(COURSE_ID, "cert:firm") || {}).name || "";
+
+    function renderBadges() {
+      const earned = Gamification.BADGES.filter((b) => CourseProgress.hasBadge(COURSE_ID, b.id));
+      if (!earned.length) return;
+      document.getElementById("cert-badges").innerHTML =
+        '<p class="cert-meta" style="margin-bottom:9px;">Earned along the way</p>' +
+        '<div style="display:flex; gap:9px; justify-content:center; flex-wrap:wrap;">' +
+        earned.map((b) =>
+          '<span style="display:inline-flex; align-items:center; gap:6px; padding:5px 11px;' +
+          'border-radius:999px; background:var(--color-primary-light); color:var(--color-primary-dark);' +
+          'font-size:0.72rem; font-weight:700;">' +
+          '<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" ' +
+          'stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="' + b.icon + '"/></svg>' +
+          b.name + '</span>').join("") +
+        '</div>';
+    }
+
+    function show(name, firm) {
+      document.getElementById("name-form-section").style.display = "none";
+      document.getElementById("cert-name-display").textContent = name;
+
+      if (firm) {
+        const el = document.getElementById("cert-firm-line");
+        el.textContent = firm;
+        el.style.display = "block";
+        el.className = "cert-meta";
+      }
+
+      document.getElementById("cert-date").textContent =
+        "Completed " + new Date().toLocaleDateString(undefined,
+          { year: "numeric", month: "long", day: "numeric" });
+
+      if (exam) {
+        document.getElementById("cert-score").textContent =
+          "Assessment score: " + exam.score + " of " + exam.total;
+      }
+
+      renderBadges();
+      document.getElementById("certificate").style.display = "block";
+      document.getElementById("post-cert-actions").style.display = "flex";
+    }
+
+    if (!exam || !exam.passed) {
+      document.getElementById("locked-section").style.display = "block";
+    } else if (savedName) {
+      show(savedName, savedFirm);
+    } else {
+      document.getElementById("name-form-section").style.display = "block";
+    }
+
+    document.getElementById("generate-btn").addEventListener("click", function () {
+      const input = document.getElementById("cert-name-input");
+      const firm = document.getElementById("cert-firm-input").value.trim();
+      const name = input.value.trim();
+      if (!name) { input.focus(); return; }
+      CourseProgress.setCertName(COURSE_ID, name);
+      if (firm) CourseProgress.setActivityResult(COURSE_ID, "cert:firm", { name: firm });
+      show(name, firm);
+    });
+
+    document.getElementById("print-btn").addEventListener("click", () => window.print());
+  </script>
+
+  <script src="../../js/reveal.js"></script>
+
+</body>
+</html>

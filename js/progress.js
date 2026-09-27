@@ -22,6 +22,7 @@ const CourseProgress = (function () {
     lessons: {},
     quizScores: {},
     scenarios: {},
+    activities: {},
     exam: null,
     certName: "",
     xpEvents: {},
@@ -44,6 +45,7 @@ const CourseProgress = (function () {
         lessons: parsed.lessons || {},
         quizScores: parsed.quizScores || {},
         scenarios: parsed.scenarios || {},
+        activities: parsed.activities || {},
         exam: parsed.exam || null,
         certName: parsed.certName || "",
         xpEvents: parsed.xpEvents || {},
@@ -114,6 +116,25 @@ const CourseProgress = (function () {
 
   function scenarioCount(courseId) {
     return Object.keys(load(courseId).scenarios).length;
+  }
+
+  /* ---------- Interactive activities ----------
+     Kept separate from quizzes and scenarios so a course built from different
+     interaction types can still report progress without either count being
+     inflated by the other. */
+
+  function setActivityResult(courseId, activityId, payload) {
+    const data = load(courseId);
+    data.activities[activityId] = payload || true;
+    save(courseId, data);
+  }
+
+  function getActivityResult(courseId, activityId) {
+    return load(courseId).activities[activityId] || null;
+  }
+
+  function activityCount(courseId) {
+    return Object.keys(load(courseId).activities).length;
   }
 
   /* ---------- Exam and certificate ---------- */
@@ -267,6 +288,7 @@ const CourseProgress = (function () {
     markLessonComplete, isLessonComplete, completedCount, percent,
     setQuizScore, getQuizScore,
     setScenarioChoice, getScenarioChoice, scenarioCount,
+    setActivityResult, getActivityResult, activityCount,
     setExamResult, getExamResult, setCertName, getCertName,
     awardXp, totalXp,
     awardBadge, hasBadge, earnedBadges,

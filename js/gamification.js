@@ -10,6 +10,16 @@ const Gamification = (function () {
      which is how courses of different lengths coexist. */
   const DEFAULT_LESSONS = ["lesson-1", "lesson-2", "lesson-3", "lesson-4", "lesson-5"];
 
+  /* Not every course can award every badge — a course with no decision
+     scenarios would show Scenario Solver locked forever, which reads as a
+     bug. A course may declare its own list in COURSE_META.badges; anything
+     that does not gets the full set, which preserves existing behaviour. */
+  function badgesFor(courseId) {
+    const meta = COURSE_META[courseId];
+    const ids = meta && meta.badges;
+    return ids ? BADGES.filter((b) => ids.indexOf(b.id) !== -1) : BADGES;
+  }
+
   function lessonsFor(courseId) {
     const meta = COURSE_META[courseId];
     return (meta && meta.lessons) || DEFAULT_LESSONS;
@@ -27,6 +37,7 @@ const Gamification = (function () {
     LESSON_COMPLETE: 100,
     PERFECT_QUIZ: 50,
     SCENARIO: 25,
+    ACTIVITY: 25,
     EXAM_PASS: 300,
     PERFECT_EXAM: 200,
   };
@@ -58,7 +69,7 @@ const Gamification = (function () {
     {
       id: "first-steps", name: "First Steps", icon: ICONS.flag,
       how: "Finish your first lesson",
-      earned: (c) => CourseProgress.isLessonComplete(c, "lesson-1"),
+      earned: (c) => CourseProgress.completedCount(c) >= 1,
     },
     {
       id: "scenario-solver", name: "Scenario Solver", icon: ICONS.compass,
@@ -135,7 +146,7 @@ const Gamification = (function () {
   function evaluateBadges(courseId) {
     remember(courseId);
     const unlocked = [];
-    BADGES.forEach(function (badge) {
+    badgesFor(courseId).forEach(function (badge) {
       if (CourseProgress.hasBadge(courseId, badge.id)) return;
       if (badge.earned(courseId)) {
         CourseProgress.awardBadge(courseId, badge.id);
@@ -167,6 +178,17 @@ const Gamification = (function () {
     return gained;
   }
 
+  /* Checkpoints, builders, drills — anything interactive that is not a quiz
+     or a scenario. Awarded once per activity id, so replaying to explore
+     never farms points. */
+  function awardActivityXp(courseId, activityId, label) {
+    const gained = [];
+    if (CourseProgress.awardXp(courseId, activityId + ":activity", XP.ACTIVITY)) {
+      gained.push({ label: label || "Activity complete", points: XP.ACTIVITY });
+    }
+    return gained;
+  }
+
   function awardExamXp(courseId, correct, total, passed) {
     const gained = [];
     if (passed && CourseProgress.awardXp(courseId, "exam:pass", XP.EXAM_PASS)) {
@@ -183,6 +205,7 @@ const Gamification = (function () {
 
   const ALL_COURSES = [
     "ai-fundamentals",
+    "ai-confidentiality",
     "ai-everyday",
     "ai-workplace",
     "ai-productivity",
@@ -193,6 +216,14 @@ const Gamification = (function () {
     "ai-fundamentals": {
       name: "AI Fundamentals", emoji: "\u{1F9E0}", live: true,
       lessons: ["lesson-1", "lesson-2", "lesson-3", "lesson-4", "lesson-5"],
+    },
+    "ai-confidentiality": {
+      name: "What NOT to Do with AI", emoji: "\u{1F512}", live: true,
+      lessons: ["module-1"],
+      /* One gated module rather than a lesson sequence, and no decision
+         scenarios, so Scenario Solver is left out — a badge that can never
+         unlock reads as a broken feature rather than a stretch goal. */
+      badges: ["first-steps", "course-complete", "certified", "flawless", "consistent"],
     },
     "ai-everyday":      { name: "AI Everyday",       emoji: "\u{1F3E1}", live: false },
     "ai-workplace":     { name: "AI Workplace",      emoji: "\u{1F4BC}", live: false },
@@ -323,7 +354,7 @@ const Gamification = (function () {
 
   function renderTrophyCase(el, courseId) {
     if (!el) return;
-    el.innerHTML = BADGES.map(function (badge) {
+    el.innerHTML = badgesFor(courseId).map(function (badge) {
       const earned = CourseProgress.hasBadge(courseId, badge.id);
       return '<div class="badge-tile' + (earned ? " is-earned" : "") + '" title="' + badge.how + '">' +
         '<div class="badge-icon">' +
@@ -384,9 +415,9 @@ const Gamification = (function () {
 
   return {
     XP, LEVELS, BADGES, ALL_COURSES, COURSE_META,
-    lessonsFor, levelInfo, isLessonLocked, requiredLessonFor,
+    lessonsFor, badgesFor, levelInfo, isLessonLocked, requiredLessonFor,
     evaluateBadges, academyXp,
-    awardLessonXp, awardScenarioXp, awardExamXp,
+    awardLessonXp, awardScenarioXp, awardActivityXp, awardExamXp,
     renderXpBar, renderAcademyXpBar, renderStreak, renderTrophyCase,
     renderCertifications, renderLeaderboard,
     refreshUi, showRewards,
